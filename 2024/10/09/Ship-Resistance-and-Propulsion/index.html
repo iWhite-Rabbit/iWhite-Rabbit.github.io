@@ -1,0 +1,353 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="大白兔奶糖"><meta name="copyright" content="大白兔奶糖"><meta name="generator" content="Hexo 7.2.0"><meta name="theme" content="hexo-theme-yun"><title>船舶快速性 | 奶糖写字的地方</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"></script><script type="module">import { renderKatex } from '/js/utils.js'
+document.addEventListener("DOMContentLoaded", () => {
+  renderKatex({
+    ...{},
+    ...true?.options,
+  });
+});</script><link rel="icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"iwhite-rabbit.github.io","root":"/","title":"奶糖写字的地方","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","fireworks":{"colors":null},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="阻力部分总论船舶阻力的成因及分类阻力成因 空气阻力   附体阻力（舵、舭龙骨、轴支架等）  兴波阻力（波浪改变船体表面压力分布）  摩擦阻力（船体表面水粘性切应力的合力）   粘压阻力（流体粘性引起漩涡）  汹涛阻力（波浪增阻）    船体阻力计算及分类研究范围：等速直航 船体阻力$R_t$&#x3D;兴波阻力$R_w$+摩擦阻力$R_f$+粘压阻力$R_{pv}$ 摩擦阻力和粘压阻力合称粘性阻力">
+<meta property="og:type" content="article">
+<meta property="og:title" content="船舶快速性">
+<meta property="og:url" content="https://iwhite-rabbit.github.io/2024/10/09/Ship-Resistance-and-Propulsion/index.html">
+<meta property="og:site_name" content="奶糖写字的地方">
+<meta property="og:description" content="阻力部分总论船舶阻力的成因及分类阻力成因 空气阻力   附体阻力（舵、舭龙骨、轴支架等）  兴波阻力（波浪改变船体表面压力分布）  摩擦阻力（船体表面水粘性切应力的合力）   粘压阻力（流体粘性引起漩涡）  汹涛阻力（波浪增阻）    船体阻力计算及分类研究范围：等速直航 船体阻力$R_t$&#x3D;兴波阻力$R_w$+摩擦阻力$R_f$+粘压阻力$R_{pv}$ 摩擦阻力和粘压阻力合称粘性阻力">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://iwhite-rabbit.github.io/images/%E8%88%B9%E8%88%B6%E5%BF%AB%E9%80%9F%E6%80%A7/%E8%88%B9%E8%88%B6%E9%98%BB%E5%8A%9B%E7%9A%84%E6%88%90%E5%9B%A0%E5%8F%8A%E5%88%86%E7%B1%BB.png">
+<meta property="og:image" content="https://iwhite-rabbit.github.io/images/%E8%88%B9%E8%88%B6%E5%BF%AB%E9%80%9F%E6%80%A7/%E9%9D%99%E6%B0%B4%E4%B8%AD%E8%88%B9%E8%88%B6%E6%80%BB%E9%98%BB%E5%8A%9B%E5%88%86%E7%B1%BB.png">
+<meta property="article:published_time" content="2024-10-09T00:30:58.000Z">
+<meta property="article:modified_time" content="2025-01-10T06:31:46.606Z">
+<meta property="article:author" content="大白兔奶糖">
+<meta property="article:tag" content="船舶与海洋工程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://iwhite-rabbit.github.io/images/%E8%88%B9%E8%88%B6%E5%BF%AB%E9%80%9F%E6%80%A7/%E8%88%B9%E8%88%B6%E9%98%BB%E5%8A%9B%E7%9A%84%E6%88%90%E5%9B%A0%E5%8F%8A%E5%88%86%E7%B1%BB.png"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="大白兔奶糖"><img width="96" loading="lazy" src="/images/avatar.jpeg" alt="大白兔奶糖"><span class="site-author-status" title="苟利国家生死以 岂因祸福避趋之">🤓</span></a><div class="site-author-name"><a href="/about/">大白兔奶糖</a></div><span class="site-name">奶糖写字的地方</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">15</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">7</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:settings-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%BB%E5%8A%9B%E9%83%A8%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text">阻力部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E8%AE%BA"><span class="toc-number">1.1.</span> <span class="toc-text">总论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%88%B9%E8%88%B6%E9%98%BB%E5%8A%9B%E7%9A%84%E6%88%90%E5%9B%A0%E5%8F%8A%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.1.</span> <span class="toc-text">船舶阻力的成因及分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%BB%E5%8A%9B%E6%88%90%E5%9B%A0"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">阻力成因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%88%B9%E4%BD%93%E9%98%BB%E5%8A%9B%E8%AE%A1%E7%AE%97%E5%8F%8A%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">船体阻力计算及分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%BB%E5%8A%9B%E6%88%90%E5%88%86%E7%9A%84%E6%AF%94%E4%BE%8B"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">阻力成分的比例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%BB%E5%8A%9B%E6%9B%B2%E7%BA%BF"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">阻力曲线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%82%85%E6%B1%9D%E5%BE%B7%E9%98%BB%E5%8A%9B%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.1.5.</span> <span class="toc-text">傅汝德阻力分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%BB%E5%8A%9B%E7%9B%B8%E4%BC%BC%E5%AE%9A%E5%BE%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">阻力相似定律</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA%E5%92%8C%E9%87%8F%E7%BA%B2%E5%88%86%E6%9E%90"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">相似理论和量纲分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%98%E6%80%A7%E9%98%BB%E5%8A%9B%E7%9B%B8%E4%BC%BC%E5%AE%9A%E5%BE%8B%E2%80%94%E2%80%94%E9%9B%B7%E8%AF%BA%E5%AE%9A%E5%BE%8B"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">粘性阻力相似定律——雷诺定律</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B4%E6%B3%A2%E9%98%BB%E5%8A%9B%E7%9B%B8%E4%BC%BC%E5%AE%9A%E5%BE%8B%E2%80%94%E2%80%94%E5%82%85%E6%B1%9D%E5%BE%B7%E5%AE%9A%E5%BE%8B"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">兴波阻力相似定律——傅汝德定律</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%88%B9%E4%BD%93%E6%80%BB%E9%98%BB%E5%8A%9B%E7%9B%B8%E4%BC%BC%E5%AE%9A%E5%BE%8B%E2%80%94%E2%80%94%E5%85%A8%E7%9B%B8%E4%BC%BC%E5%AE%9A%E5%BE%8B"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">船体总阻力相似定律——全相似定律</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%9B%A0%E6%AC%A1%E6%B3%95%E6%B1%82%E8%88%B9%E4%BD%93%E9%98%BB%E5%8A%9B"><span class="toc-number">1.1.2.5.</span> <span class="toc-text">二因次法求船体阻力</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%B0%B4%E9%98%BB%E5%8A%9B%E4%B8%8E%E8%88%B9%E6%A1%A8%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">静水阻力与船桨相互作用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%A9%E6%93%A6%E9%98%BB%E5%8A%9B"><span class="toc-number">1.2.1.</span> <span class="toc-text">摩擦阻力</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%98%E6%80%A7%E9%98%BB%E5%8A%9B%E7%9A%84%E7%BB%84%E6%88%90%E4%B8%8E%E8%88%B9%E4%BD%93%E8%BE%B9%E7%95%8C%E5%B1%82"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">粘性阻力的组成与船体边界层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E6%9D%BF%E8%BE%B9%E7%95%8C%E5%B1%82%E4%B8%8E%E6%91%A9%E6%93%A6%E9%98%BB%E5%8A%9B"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">平板边界层与摩擦阻力</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E6%9D%BF%E6%91%A9%E6%93%A6%E9%98%BB%E5%8A%9B%E7%B3%BB%E6%95%B0%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">平板摩擦阻力系数计算公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%88%B9%E4%BD%93%E8%A1%A8%E9%9D%A2%E5%BC%AF%E6%9B%B2%E5%BA%A6%E5%AF%B9%E6%91%A9%E6%93%A6%E9%98%BB%E5%8A%9B%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">船体表面弯曲度对摩擦阻力的影响</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%88%B9%E4%BD%93%E8%A1%A8%E9%9D%A2%E7%B2%97%E7%B3%99%E5%BA%A6%E5%AF%B9%E6%91%A9%E6%93%A6%E9%98%BB%E5%8A%9B%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.2.1.5.</span> <span class="toc-text">船体表面粗糙度对摩擦阻力的影响</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%91%A9%E6%93%A6%E9%98%BB%E5%8A%9B%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.1.6.</span> <span class="toc-text">摩擦阻力计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%8F%E5%B0%8F%E6%91%A9%E6%93%A6%E9%98%BB%E5%8A%9B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.7.</span> <span class="toc-text">减小摩擦阻力的方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%98%E5%8E%8B%E9%98%BB%E5%8A%9B"><span class="toc-number">1.2.2.</span> <span class="toc-text">粘压阻力</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%88%B9%E4%BD%93%E7%B2%98%E5%8E%8B%E9%98%BB%E5%8A%9B%E4%BA%A7%E7%94%9F%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">船体粘压阻力产生原因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%B1%E5%93%8D%E7%B2%98%E5%8E%8B%E9%98%BB%E5%8A%9B%E7%9A%84%E5%9B%A0%E7%B4%A0"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">影响粘压阻力的因素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%8D%E4%BD%8E%E7%B2%98%E5%8E%8B%E9%98%BB%E5%8A%9B%E5%AF%B9%E8%88%B9%E5%9E%8B%E7%9A%84%E8%A6%81%E6%B1%82"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">降低粘压阻力对船型的要求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%88%B9%E4%BD%93%E7%B2%98%E5%8E%8B%E9%98%BB%E5%8A%9B%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">船体粘压阻力处理方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E7%B2%98%E6%80%A7%E9%98%BB%E5%8A%9B%E7%9A%84%E5%B0%BE%E6%B5%81%E6%B5%8B%E9%87%8F%E6%B3%95"><span class="toc-number">1.2.2.5.</span> <span class="toc-text">确定粘性阻力的尾流测量法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B4%E6%B3%A2%E9%98%BB%E5%8A%9B"><span class="toc-number">1.2.3.</span> <span class="toc-text">兴波阻力</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%88%B9%E8%A1%8C%E6%B3%A2%E7%9A%84%E5%BD%A2%E6%88%90%E5%92%8CKelvin%E6%B3%A2%E7%B3%BB"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">船行波的形成和Kelvin波系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%88%B9%E7%9A%84%E9%A6%96%E5%B0%BE%E6%B3%A2%E7%B3%BB%E5%8F%8A%E5%85%B6%E5%B9%B2%E6%89%B0"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">船的首尾波系及其干扰</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B4%E6%B3%A2%E9%98%BB%E5%8A%9B%E5%92%8C%E6%B3%A2%E6%B5%AA%E5%8F%82%E6%95%B0"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">兴波阻力和波浪参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B4%E6%B3%A2%E9%98%BB%E5%8A%9B%E7%9A%84%E4%B8%80%E8%88%AC%E8%A7%84%E5%BE%8B"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">兴波阻力的一般规律</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E8%88%B9%E5%9E%8B%E7%9A%84%E5%85%B4%E6%B3%A2%E9%98%BB%E5%8A%9B%E5%B7%AE%E5%BC%82"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">不同船型的兴波阻力差异</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B4%E6%B3%A2%E9%98%BB%E5%8A%9B%E4%B8%8E%E8%88%B9%E5%9E%8B%E5%85%B3%E7%B3%BB%E5%8F%8A%E5%B9%B2%E6%89%B0%E9%A2%84%E6%B5%8B"><span class="toc-number">1.2.3.6.</span> <span class="toc-text">兴波阻力与船型关系及干扰预测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E5%85%B4%E6%B3%A2%E9%98%BB%E5%8A%9B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.3.7.</span> <span class="toc-text">确定兴波阻力的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%8F%E5%B0%8F%E5%85%B4%E6%B3%A2%E9%98%BB%E5%8A%9B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.3.8.</span> <span class="toc-text">减小兴波阻力的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A0%B4%E6%B3%A2%E9%98%BB%E5%8A%9B"><span class="toc-number">1.2.3.9.</span> <span class="toc-text">破波阻力</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%BB%E5%8A%9B%E5%88%86%E7%B1%BB%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="toc-number">1.2.3.10.</span> <span class="toc-text">阻力分类补充说明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%8A%A0%E9%98%BB%E5%8A%9B%E5%8F%8A%E6%80%BB%E9%98%BB%E5%8A%9B%E8%BF%91%E4%BC%BC%E4%BC%B0%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">附加阻力及总阻力近似估算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%84%E4%BD%93%E9%98%BB%E5%8A%9B"><span class="toc-number">1.3.1.</span> <span class="toc-text">附体阻力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E6%B0%94%E9%98%BB%E5%8A%9B"><span class="toc-number">1.3.2.</span> <span class="toc-text">空气阻力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E6%B5%AA%E4%B8%AD%E7%9A%84%E9%98%BB%E5%8A%9B%E5%A2%9E%E5%80%BC"><span class="toc-number">1.3.3.</span> <span class="toc-text">波浪中的阻力增值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E9%98%BB%E5%8A%9B%E8%BF%91%E4%BC%BC%E4%BC%B0%E8%AE%A1"><span class="toc-number">1.3.4.</span> <span class="toc-text">总阻力近似估计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%88%B9%E6%A8%A1%E9%98%BB%E5%8A%9B%E8%AF%95%E9%AA%8C"><span class="toc-number">1.3.5.</span> <span class="toc-text">船模阻力试验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%88%B9%E5%9E%8B%E5%AF%B9%E9%98%BB%E5%8A%9B%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.4.</span> <span class="toc-text">船型对阻力的影响</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.4.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%88%B9%E4%BD%93%E4%B8%BB%E5%B0%BA%E5%BA%A6%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.4.2.</span> <span class="toc-text">船体主尺度的影响</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A8%E8%BF%9B%E9%83%A8%E5%88%86"><span class="toc-number">2.</span> <span class="toc-text">推进部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9E%BA%E6%97%8B%E6%A1%A8%E6%B0%B4%E5%8A%A8%E5%8A%9B%E6%80%A7%E8%83%BD"><span class="toc-number">2.1.</span> <span class="toc-text">螺旋桨水动力性能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9E%BA%E6%97%8B%E6%A1%A8%E7%A9%BA%E6%B3%A1%E6%80%A7%E8%83%BD"><span class="toc-number">2.2.</span> <span class="toc-text">螺旋桨空泡性能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9E%BA%E6%97%8B%E6%A1%A8%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.3.</span> <span class="toc-text">螺旋桨设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%88%B9%E8%88%B6%E5%BF%AB%E9%80%9F%E6%80%A7%E9%A2%84%E6%8A%A5"><span class="toc-number">2.4.</span> <span class="toc-text">船舶快速性预报</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://iwhite-rabbit.github.io/2024/10/09/Ship-Resistance-and-Propulsion/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="大白兔奶糖"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="奶糖写字的地方"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">船舶快速性</h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2024-10-09 08:30:58" itemprop="dateCreated datePublished" datetime="2024-10-09T08:30:58+08:00">2024-10-09</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="修改时间：2025-01-10 14:31:46" itemprop="dateModified" datetime="2025-01-10T14:31:46+08:00">2025-01-10</time></div><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E9%82%83%E5%AF%86%E7%BE%A4%E7%A7%91%E6%B5%8E%E4%B8%96%E7%A9%B7/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">邃密群科济世穷</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E8%88%B9%E8%88%B6%E4%B8%8E%E6%B5%B7%E6%B4%8B%E5%B7%A5%E7%A8%8B/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">船舶与海洋工程</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h1 id="阻力部分"><a href="#阻力部分" class="headerlink" title="阻力部分"></a>阻力部分</h1><h2 id="总论"><a href="#总论" class="headerlink" title="总论"></a>总论</h2><h3 id="船舶阻力的成因及分类"><a href="#船舶阻力的成因及分类" class="headerlink" title="船舶阻力的成因及分类"></a>船舶阻力的成因及分类</h3><h4 id="阻力成因"><a href="#阻力成因" class="headerlink" title="阻力成因"></a>阻力成因</h4><ol>
+<li><p>空气阻力 </p>
+</li>
+<li><p>附体阻力（舵、舭龙骨、轴支架等）</p>
+</li>
+<li><p><strong>兴波阻力</strong>（波浪改变船体表面压力分布）</p>
+</li>
+<li><p><strong>摩擦阻力</strong>（船体表面水粘性切应力的合力） </p>
+</li>
+<li><p><strong>粘压阻力</strong>（流体粘性引起漩涡）</p>
+</li>
+<li><p>汹涛阻力（波浪增阻）</p>
+</li>
+</ol>
+<p><img src="/images/%E8%88%B9%E8%88%B6%E5%BF%AB%E9%80%9F%E6%80%A7/%E8%88%B9%E8%88%B6%E9%98%BB%E5%8A%9B%E7%9A%84%E6%88%90%E5%9B%A0%E5%8F%8A%E5%88%86%E7%B1%BB.png" loading="lazy"></p>
+<h4 id="船体阻力计算及分类"><a href="#船体阻力计算及分类" class="headerlink" title="船体阻力计算及分类"></a>船体阻力计算及分类</h4><p>研究范围：等速直航</p>
+<p><strong>船体阻力</strong>$R_t$&#x3D;<strong>兴波阻力</strong>$R_w$+<strong>摩擦阻力</strong>$R_f$+<strong>粘压阻力</strong>$R_{pv}$</p>
+<p>摩擦阻力和粘压阻力合称<strong>粘性阻力</strong>，粘压阻力和兴波阻力合称<strong>压差阻力</strong></p>
+<p>注：压阻力中包含有粘压阻力和兴波阻力两类不同性质的力。兴波阻力既使在理想流体中仍然存在，而摩擦阻力和粘压阻力两者都是由于水的粘性而产生的（可合称为粘性阻力），在理想流体中并不存在</p>
+<h4 id="阻力成分的比例"><a href="#阻力成分的比例" class="headerlink" title="阻力成分的比例"></a>阻力成分的比例</h4><p>低速船：摩擦阻力70%~80%，粘压阻力10%以上， 兴波阻力很小</p>
+<p>高速船：兴波阻力40%~50%，摩擦阻力50%，粘压阻力5%</p>
+<h4 id="阻力曲线"><a href="#阻力曲线" class="headerlink" title="阻力曲线"></a>阻力曲线</h4><p>船型给定时，阻力仅仅是船速的函数。</p>
+<p>有效功率(克服船体阻力所需功率)：$P_E&#x3D;船体总阻力R_t\times船速 v_s$</p>
+<h4 id="傅汝德阻力分类"><a href="#傅汝德阻力分类" class="headerlink" title="傅汝德阻力分类"></a>傅汝德阻力分类</h4><p>船体阻力$R_t$ &#x3D; 摩擦阻力$R_{fp}$ + 剩余阻力$R_r$</p>
+<p>此处$R_{fp}$为相当平板(船长与湿表面积相等的平板)的摩擦阻力</p>
+<h3 id="阻力相似定律"><a href="#阻力相似定律" class="headerlink" title="阻力相似定律"></a>阻力相似定律</h3><h4 id="相似理论和量纲分析"><a href="#相似理论和量纲分析" class="headerlink" title="相似理论和量纲分析"></a>相似理论和量纲分析</h4><p>力学相似&#x3D;几何相似+运动相似+动力相似<br>量纲分析中的$\pi$定理</p>
+<h4 id="粘性阻力相似定律——雷诺定律"><a href="#粘性阻力相似定律——雷诺定律" class="headerlink" title="粘性阻力相似定律——雷诺定律"></a>粘性阻力相似定律——雷诺定律</h4><p>一定形状的物体，粘性阻力系数仅与$Re$数相关；</p>
+<p>当$Re$数相同时，两形似物体的粘性阻力系数相等。</p>
+<p>粘性阻力系数$C_v&#x3D;f(Re)$</p>
+<p>$$C_v&#x3D;\frac{R_v}{\frac{1}{2}ρV^2S}$$</p>
+<p>$$Re&#x3D;\frac{VL}{\nu}&#x3D;\frac{\rho VL}{\mu}$$</p>
+<p>ρ、μ为流体密度和动力粘性系数，𝜈为运动粘性系数，V、L为 流场的特征速度和特征长度。</p>
+<p>在典型的海洋工程应用中，比如船舶、海洋平台中：$Re&#x3D;10^{6-10}$<br>因此粘性影响一般可忽略；但对粘性阻力问题不可忽略。</p>
+<h4 id="兴波阻力相似定律——傅汝德定律"><a href="#兴波阻力相似定律——傅汝德定律" class="headerlink" title="兴波阻力相似定律——傅汝德定律"></a>兴波阻力相似定律——傅汝德定律</h4><p>考虑在理想流体中航行的水面船舶，由于流体无粘，所以既无摩擦阻力又无粘压阻力，仅有兴波阻力。</p>
+<p>$$C_w&#x3D;f(Fr)$$</p>
+<p>$$C_w&#x3D;\frac{R_w}{\frac{1}{2}ρV^2S}$$</p>
+<p>$$Fr&#x3D;\frac{V}{\sqrt{gL}}$$</p>
+<p>形似船之间，为保持$Fr$相同，则它们速度必须满足一定的关系:</p>
+<p>$$V_m&#x3D;\frac{V_s}{\sqrt{L_s&#x2F;L_m}}$$</p>
+<ol>
+<li>当模拟<strong>具有自由液面的液体流动</strong>时，如水面船舶运动、明渠流动等，$Fr$数是必须考虑的相似准则数</li>
+<li>$Fr$数较小表示绝大部分船重由浮力平衡，即船舶处于排水航行状态；$Fr$较大表示绝大部分船重由水动升力平衡，使它处于全滑行状态。</li>
+</ol>
+<h4 id="船体总阻力相似定律——全相似定律"><a href="#船体总阻力相似定律——全相似定律" class="headerlink" title="船体总阻力相似定律——全相似定律"></a>船体总阻力相似定律——全相似定律</h4><p>$C_t&#x3D;f(Fr,Re)$</p>
+<p>全相似做不到。船模与实船之间的运动差异是由于模型与实物之间相似条件不能全部满足而给换算带来误差，称为“尺度效应（Scale Effect）”</p>
+<h4 id="二因次法求船体阻力"><a href="#二因次法求船体阻力" class="headerlink" title="二因次法求船体阻力"></a>二因次法求船体阻力</h4><p><strong>Froude假定——二因次法</strong>：船体总阻力$R_t$分为两个部分：</p>
+<p>摩擦阻力$R_f$只与$Re$数有关，船体的摩擦阻力等于同速度、同长度、同湿面积的平板摩擦阻力(<strong>相当平板假定</strong> )<br>剩余阻力$R_r$ &#x3D; $R_w$(兴波) + $R_{pv}$ (粘压) 只与 $ F_r$ 数有关并满足比较律</p>
+<p>阻力形式：$R_{ts}&#x3D;R_{fs}+(R_{tm}-R_{ts})\frac{ρ_s}{ρ_m}α^3$<br>无量纲阻力系数形式：$C_{ts}&#x3D;C_{fs}+C_{rs}+\Delta C_f$</p>
+<p>$C_{fs}$可从湍流平板公式求得，$C_{rs}$可由相似定律求得$𝐶_{𝑟𝑠} &#x3D; 𝐶_{𝑟𝑚} &#x3D; 𝐶_{𝑡𝑚}(实验测定)− 𝐶_{𝑓m}(平板公式)$，$\Delta C_f$为船体粗糙度修正</p>
+<p><strong>阻力形式Froude法换算的一般步骤</strong>：</p>
+<ol>
+<li>船模实验测得船模的船体阻力$R_{tm}$</li>
+<li>以相当平板假定为基础，计算出船模的摩擦阻力$R_{fm}$</li>
+<li>求船模的剩余阻力$R_{rm}$</li>
+<li>应用比较定律换算出实船的剩余阻力$R_{rs}$</li>
+<li>以相当平板假定为基础，计算出实船的摩擦阻力$R_{fs}$</li>
+<li>求实船的船体阻力$R_{ts}$</li>
+</ol>
+<h2 id="静水阻力与船桨相互作用"><a href="#静水阻力与船桨相互作用" class="headerlink" title="静水阻力与船桨相互作用"></a>静水阻力与船桨相互作用</h2><h3 id="摩擦阻力"><a href="#摩擦阻力" class="headerlink" title="摩擦阻力"></a>摩擦阻力</h3><h4 id="粘性阻力的组成与船体边界层"><a href="#粘性阻力的组成与船体边界层" class="headerlink" title="粘性阻力的组成与船体边界层"></a>粘性阻力的组成与船体边界层</h4><p><strong>粘性阻力的组成：</strong></p>
+<p>摩擦阻力：水的粘性作用，船体表面产生摩擦切应力</p>
+<p>粘压阻力：水的粘性作用，船体前后部分存在压力差</p>
+<p><strong>船舶粘性阻力的计算方法：</strong></p>
+<p>根据边界层理论或雷诺平均方程用数值方法求解</p>
+<p> 工程上，将摩擦阻力和粘压阻力分别求解</p>
+<p><strong>船体边界层</strong></p>
+<p>船体边界层的特点：</p>
+<ul>
+<li>船体几何形状十分复杂，数学表达困难。</li>
+<li>边界层外缘势流与平板的势流明显不同。平板：边界层外缘势流速度和压力均保持不变；船体：势流是三维的，存在纵向的速度梯度、 压力梯度，首尾尤显著。</li>
+<li>船前75—80% L是薄边界层，以后边界层变厚。 压力在边界层内有变化，要用N-S方程解。</li>
+</ul>
+<h4 id="平板边界层与摩擦阻力"><a href="#平板边界层与摩擦阻力" class="headerlink" title="平板边界层与摩擦阻力"></a>平板边界层与摩擦阻力</h4><p>层内的流动状态取决于局部雷诺数</p>
+<p>层流：$Re&lt;(3.5-5.0)\times 10^5$</p>
+<p>转捩：$(3.5-5.0)\times 10^5&lt;Re&lt;3.0\times 10^6$</p>
+<p>湍流：$Re&lt;3.0\times 10^6$</p>
+<p><strong>平板受到的摩擦阻力：</strong></p>
+<p>$$C_f&#x3D;\frac{R_f}{\frac{1}{2}\rho v^2S}&#x3D;\frac{1}{x}\int_0^x{C_{\tau}dx}$$</p>
+<p>对于层流边界层有Blasius解：</p>
+<p>$C_\tau&#x3D;0.664Re^{-\frac{1}{2}}$</p>
+<p>$C_f&#x3D;1.328Re^{-\frac{1}{2}}$</p>
+<p>对于湍流平板边界层：参见《水动力学基础》刘应中等</p>
+<p>另一种近似（幂次率）：$\frac{u}{\nu}&#x3D;\left( \frac{y}{\delta} \right) ^n, n&#x3D;\frac{1}{7}\sim \frac{1}{11}$，n的具体取值与雷诺数有关。</p>
+<p>Karman动量方程：略</p>
+<h4 id="平板摩擦阻力系数计算公式"><a href="#平板摩擦阻力系数计算公式" class="headerlink" title="平板摩擦阻力系数计算公式"></a>平板摩擦阻力系数计算公式</h4><p>湍流平板摩擦阻力公式：</p>
+<ul>
+<li>由幂次律（指数律）得到的平板公式</li>
+<li>由对数分布得到的平板公式<ol>
+<li>Schoenherr(桑海)公式</li>
+<li>Prandtl-Schlichting(柏兰特-许立汀)公式</li>
+<li>Hughes(休斯)公式</li>
+<li>ITTC公式：$C_f&#x3D;\frac{0.075}{(\lg Re-2.0)^2}$</li>
+</ol>
+</li>
+</ul>
+<p>层流段、过渡区的影响：略</p>
+<h4 id="船体表面弯曲度对摩擦阻力的影响"><a href="#船体表面弯曲度对摩擦阻力的影响" class="headerlink" title="船体表面弯曲度对摩擦阻力的影响"></a>船体表面弯曲度对摩擦阻力的影响</h4><p>船体水流均速&gt;平板，在船前70%部分边界层厚度小，摩擦阻力偏大；</p>
+<p>当船尾附近，船体边界层增厚，水流速度减小，摩擦阻力随之减小。</p>
+<p>总体来说船体表面弯曲度对摩擦阻力影响并不显著。这也表明想通过改变船体曲线的办法来减小摩擦阻力，其效果不明显。</p>
+<p>对于三维的回转体来说，弯曲度对摩擦阻力的增加并不明显。但对二维物体的影响大得多。<br>注意：这只是曲率对C𝑓的影响，粘压不在内（不考虑漩涡影响）</p>
+<p>船体形状效应：船体形状引起的船体摩擦阻力与相当平板摩擦阻力差别<br>形状因子 $k_f$：<br>实际船参照$k_f$与L&#x2F;B的关系图, $𝑘_𝑓$在1.00—1.03之间较小，故一般认为，船体弯曲度对摩擦阻力的影响并不显著。</p>
+<h4 id="船体表面粗糙度对摩擦阻力的影响"><a href="#船体表面粗糙度对摩擦阻力的影响" class="headerlink" title="船体表面粗糙度对摩擦阻力的影响"></a>船体表面粗糙度对摩擦阻力的影响</h4><p>船体表面粗糙度：普遍糙度、局部糙度（结构糙度）、污底。<br>实践证明，船体表面粗糙度对摩擦阻力的影响是很显著的。</p>
+<p>$Re$较小时，粗糙度不起影响，接近光滑曲线；</p>
+<p>$Re$较大时，粗糙度产生影响，阻力曲线逐渐离开光滑曲线：$C_f&#x3D;f(Re,L&#x2F;k_\sigma)$</p>
+<p>$Re$很大时，$\Delta C_f$与雷诺数选取无关，为常数</p>
+<h4 id="摩擦阻力计算"><a href="#摩擦阻力计算" class="headerlink" title="摩擦阻力计算"></a>摩擦阻力计算</h4><p>$Re&gt;10^7$, $\Delta C_f&#x3D;0.4\times 10^{-3}$为常数</p>
+<p>1975年ITTC公式：$\Delta C_f&#x3D;\left[ 105\left( \frac{k_s}{L} \right) ^{-\frac{1}{3}}-0.64 \right] \times 10^{-3}$</p>
+<p><strong>基本步骤</strong>：</p>
+<ol>
+<li>计算雷诺数：$Re&#x3D;\frac{vL}{\nu}$</li>
+<li>计算光滑平板的摩擦阻力系数：Schoenherr公式 ，Prandtl-Schlichting公式， 15th ITTC公式</li>
+<li>使用S或P-S公式，则$C_a&#x3D;\Delta C_f&#x3D;0.4\times 10^{-3}$<br> 1975年ITTC公式 $L_w&lt;150m$<br> 1990年ITTC公式 $L_w&gt;150m$</li>
+<li>计算船舶湿表面积$S$</li>
+<li>$R_f&#x3D;\frac{1}{2}(C_f+C_a)\rho v^2S$</li>
+</ol>
+<h4 id="减小摩擦阻力的方法"><a href="#减小摩擦阻力的方法" class="headerlink" title="减小摩擦阻力的方法"></a>减小摩擦阻力的方法</h4><p>传统思路：使湿表面积减少；使表面尽可能光滑；减少不必要的附体</p>
+<p>其他思路：将船体抬出水面，减小ρ；气膜减阻；控制边界层；高分子减阻（在船体表面不断喷注高分子添加剂）；软性（顺应）覆盖层（如海豚表皮）；表面波纹和沟槽</p>
+<h3 id="粘压阻力"><a href="#粘压阻力" class="headerlink" title="粘压阻力"></a>粘压阻力</h3><h4 id="船体粘压阻力产生原因"><a href="#船体粘压阻力产生原因" class="headerlink" title="船体粘压阻力产生原因"></a>船体粘压阻力产生原因</h4><p>边界层的动量损失,在船尾部形成漩涡</p>
+<h4 id="影响粘压阻力的因素"><a href="#影响粘压阻力的因素" class="headerlink" title="影响粘压阻力的因素"></a>影响粘压阻力的因素</h4><ul>
+<li>最重要的是物体后端的形状——减小纵向的逆压梯度</li>
+<li>边界层的流动状态；船模和实船$Re$相差$10^3$左右，边界层分离不相似，往往船模分离而实船 不分离</li>
+<li>船体的舭涡——安装球鼻首</li>
+</ul>
+<h4 id="降低粘压阻力对船型的要求"><a href="#降低粘压阻力对船型的要求" class="headerlink" title="降低粘压阻力对船型的要求"></a>降低粘压阻力对船型的要求</h4><ul>
+<li>注意后体形状 </li>
+<li>船型变化不宜过急，特别注意横剖面曲线A(x)，前肩勿过于隆起，后肩勿过于内凹</li>
+<li>对低速肥大船型，可采用球鼻艏以减少舭涡</li>
+<li>注意方形系数的选取</li>
+<li>肥大船型：$C_B&gt;0.8,\frac{L}{B}&gt;6$ 分离不可避免</li>
+</ul>
+<h4 id="船体粘压阻力处理方法"><a href="#船体粘压阻力处理方法" class="headerlink" title="船体粘压阻力处理方法"></a>船体粘压阻力处理方法</h4><p> Froude法（二因次法）：随船长的增大，更主要的是肥大船的出现，Froude 法不适用<br> <strong>1+k方法（三因次换算法）</strong>：</p>
+<ul>
+<li>减小Cr中不符合比较定律的部分，提高$C_{fp}$在船模端的数值</li>
+<li>将粘压阻力以形状因子并入摩擦阻力</li>
+</ul>
+<p>$$C_t&#x3D;(1+k)C_{fp}+C_w$$</p>
+<p>$$C_{ts}&#x3D;C_{tm}-(1+k)(C_{fpm}-C_{fps})+\Delta C_f$$</p>
+<p>k——形状系数：<br>形状因子$$(1+k)&#x3D;\frac{C_v}{C_{fp}}$$</p>
+<p>k的确定：1978年ITTC改进Prohaska法：假定$C_w\propto F_{n}^{m}, m&#x3D;4到6$，(<strong>Prohaska法</strong>取m&#x3D;4)<br>$$\frac{C_{tm}}{C_{fpm}}&#x3D;(1+k)+y\frac{F_{n}^{m}}{C_{fpm}}$$</p>
+<p>(1+k), y, m根据船试验结果用最小二乘法来确定</p>
+<h4 id="确定粘性阻力的尾流测量法"><a href="#确定粘性阻力的尾流测量法" class="headerlink" title="确定粘性阻力的尾流测量法"></a>确定粘性阻力的尾流测量法</h4><p>利用动量损失来间接测量粘性阻力</p>
+<h3 id="兴波阻力"><a href="#兴波阻力" class="headerlink" title="兴波阻力"></a>兴波阻力</h3><h4 id="船行波的形成和Kelvin波系"><a href="#船行波的形成和Kelvin波系" class="headerlink" title="船行波的形成和Kelvin波系"></a>船行波的形成和Kelvin波系</h4><p>两类兴波：</p>
+<ul>
+<li><p>船行波：留在船后方并不断向外传播的波浪</p>
+</li>
+<li><p>破波：并不以波浪的形式留在船后，主要发生在肥大船型</p>
+</li>
+</ul>
+<p>兴波阻力：</p>
+<ul>
+<li>由船行波产生的阻力称为波形阻力，是船舶兴波阻力的主要成分</li>
+<li>由破波产生的阻力称为破波阻力，在船舶兴波阻力中所占比重较小</li>
+<li>若无特殊说明，通常船舶兴波阻力是指波形阻力，而不包括破波阻力</li>
+</ul>
+<p>平面进行波的特征：</p>
+<ul>
+<li>波长：$\lambda$</li>
+<li>波数：$k&#x3D;\frac{2\pi}{\lambda}$</li>
+<li>周期：$T$</li>
+<li>圆频率：$\omega&#x3D;\frac{2\pi}{T}$</li>
+<li>波速：$c&#x3D;\frac{\omega}{k}&#x3D;\frac{\frac{2\pi}{T}}{\frac{2\pi}{\lambda}}&#x3D;\frac{\lambda}{T}$</li>
+<li><strong>深水色散关系</strong>：$\omega^2&#x3D;gk$</li>
+<li>周期T，波速c、波长$\lambda$的相互关系</li>
+</ul>
+<p>波能：</p>
+<ul>
+<li><p>波浪运动所具有的能量，包括波浪的动能和位能</p>
+</li>
+<li><p>在单位自由表面上，平面进行波的时间平均总能量：</p>
+<p>$$E_0&#x3D;E_k+E_p&#x3D;\frac{1}{4}\rho gA^2+\frac{1}{4}\rho gA^2&#x3D;\frac{1}{2}\rho gA^2&#x3D;\frac{1}{8}\rho gH^2$$</p>
+</li>
+</ul>
+<p>波能传播速度（群速度）：</p>
+<p>由于位能和动能各占总能量之半，且动能不沿波形传播方向转移<br>因此就波浪总能量而言，其传播速度仅为波速之半：$C_E&#x3D;\frac{1}{2}C$（深水）</p>
+<p>船行自由波：</p>
+<p><strong>船行波的形成</strong>：</p>
+<ul>
+<li>船舶航行时，改变船舶四周的流场及压力分布，而形成波。</li>
+<li>实际船行波的首波峰总在船首柱稍后的地方；尾波峰位于尾柱之后，尾柱前总为一波谷。</li>
+</ul>
+<h4 id="船的首尾波系及其干扰"><a href="#船的首尾波系及其干扰" class="headerlink" title="船的首尾波系及其干扰"></a>船的首尾波系及其干扰</h4><p>船行波的主要特征：</p>
+<ul>
+<li><p>首尾两大波系：首横波，首散波；尾横波，尾散波</p>
+</li>
+<li><p>整个波系限定在凯尔文角所限定的范围内</p>
+</li>
+<li><p>首横波在艏柱略后处为波峰；尾横波在尾柱略前处由波谷开始</p>
+</li>
+<li><p>整个波系，横波之间及散波之间互不干扰</p>
+</li>
+<li><p>船首尾两横波在船尾互相混合，组成合成横波</p>
+</li>
+<li><p>船行波随船一起前进，因此波速等于船速：$c&#x3D;v_s&#x3D;\sqrt{\frac{g\lambda}{2\pi}}$</p>
+</li>
+<li><p>首尾肩波：船型突变 导致压力突变而形成</p>
+</li>
+</ul>
+<p>首尾横波的干扰：有利（峰+谷）和不利干扰（峰+峰，谷＋谷）</p>
+<p><strong>影响首尾横波干扰的因素</strong>：</p>
+<p>兴波长度mL：首横波第一波峰与尾波第一波峰之间的距离</p>
+<p>干扰结果取决于兴波长度mL和波长$\lambda$：</p>
+<p>$$mL&#x3D;n\lambda+q\lambda$$</p>
+<p>$$n+q&#x3D;\frac{m}{2\pi Fr^2}$$</p>
+<p>式中，n为正整数；q为正分数；m为系数，主要与傅汝德数和船型有关</p>
+<ol>
+<li><p>q&#x3D;0，首尾横波重合，不利干扰</p>
+</li>
+<li><p>q&#x3D;0.5，首尾波波峰波谷重叠，有利干扰</p>
+</li>
+<li><p>q为任意分数，一般干扰</p>
+</li>
+</ol>
+<h4 id="兴波阻力和波浪参数"><a href="#兴波阻力和波浪参数" class="headerlink" title="兴波阻力和波浪参数"></a>兴波阻力和波浪参数</h4><p>$$R_w&#x3D;\frac{1}{4}\rho ga^2$$</p>
+<p><strong>兴波阻力与波高的平方成正比</strong>。当波高增加时，兴波阻力急剧增加。</p>
+<h4 id="兴波阻力的一般规律"><a href="#兴波阻力的一般规律" class="headerlink" title="兴波阻力的一般规律"></a>兴波阻力的一般规律</h4><p>$$R_w&#x3D;[A+Bcos(2\pi \frac{mL}{\lambda})]v^6$$</p>
+<p>$$C_w&#x3D;\frac{R_w}{\frac{1}{2}\rho v^2S}&#x3D;(C+Dcos(2\pi \frac{mL}{\lambda}))(\frac{v}{\sqrt{gL}})^4$$</p>
+<h4 id="不同船型的兴波阻力差异"><a href="#不同船型的兴波阻力差异" class="headerlink" title="不同船型的兴波阻力差异"></a>不同船型的兴波阻力差异</h4><ol>
+<li>当Fr&lt;0.15,兴波阻力较小</li>
+<li>在整个Fr区，丰满船的Cw比瘦削型的高速船大，在Fr增大时，两者的差极为明显。</li>
+<li>丰满船在低Fr数时，Cw出现峰谷；瘦削型仅在Fr&#x3D;0.5附近存在峰值。</li>
+</ol>
+<ul>
+<li>随航速变化很大  $R_w～v^6$,   $C_w～Fr^4$</li>
+<li>随船型变化很敏感(对比摩擦阻力$R_f$,与湿面积成正比)</li>
+<li>兴波阻力曲线有起伏 （波阻峰点，波阻谷点）</li>
+</ul>
+<p>设计时力求避免在峰点，办法：<br>  ①改船长<br>  ②改船速 ，影响波长<br>  ③调整菱形系数Cp, Cp对阻力有一定影响</p>
+<h4 id="兴波阻力与船型关系及干扰预测"><a href="#兴波阻力与船型关系及干扰预测" class="headerlink" title="兴波阻力与船型关系及干扰预测"></a>兴波阻力与船型关系及干扰预测</h4><p><strong>圆圈P理论预测兴波干扰：</strong></p>
+<p>设首横波第一个节点到尾横波第一个波谷之间的距离为CpL（棱形系数乘以船长），则：</p>
+<p>$$mL&#x3D;CpL+\frac{3}{4}\lambda$$</p>
+<p>$$\frac{CpL}{\lambda}&#x3D;(n+q)-\frac{3}{4}$$</p>
+<p>当q&#x3D;0.5时有利干扰：$C_pL&#x2F;\lambda&#x3D;n-1&#x2F;4$</p>
+<p>当q&#x3D;0时不利干扰：$C_pL&#x2F;\lambda&#x3D;n-3&#x2F;4$</p>
+<p>定义<strong>圆圈P</strong>$&#x3D;\frac{v}{\sqrt{\frac{gC_P L}{2\pi}}}&#x3D;\sqrt{\frac{\lambda}{C_p L}}$</p>
+<p>圆圈P为船速与波长为$C_p L$时的波速的比值</p>
+<p>可以根据<strong>圆圈P</strong>预测兴波阻力的峰谷</p>
+<p>波阻峰：圆圈P&#x3D;$\sqrt{1&#x2F;(n-\frac{3}{4})}&#x3D;\sqrt{4},\sqrt{4&#x2F;5},\sqrt{4&#x2F;9},\sqrt{4&#x2F;13}……$</p>
+<p>波阻谷：圆圈P&#x3D;$\sqrt{1&#x2F;(n-\frac{1}{4})}&#x3D;\sqrt{4&#x2F;3},\sqrt{4&#x2F;7},\sqrt{4&#x2F;11},\sqrt{4&#x2F;15}……$</p>
+<p>实际应用：$P&#x3D;2.5066\frac{Fr}{\sqrt{C_p}}$，制作预测图谱</p>
+<h4 id="确定兴波阻力的方法"><a href="#确定兴波阻力的方法" class="headerlink" title="确定兴波阻力的方法"></a>确定兴波阻力的方法</h4><p>船模试验法</p>
+<p>Michell的“薄船”兴波阻力 Rw的计算公式，影响兴波阻力主要是水线的纵向梯度</p>
+<p>波形分析法</p>
+<h4 id="减小兴波阻力的方法"><a href="#减小兴波阻力的方法" class="headerlink" title="减小兴波阻力的方法"></a>减小兴波阻力的方法</h4><p><strong>减小常规船兴波阻力的方法</strong></p>
+<p>常规船，尤其是中速船，0.2&lt;Fr&lt;0.3，经典方法：</p>
+<ul>
+<li><p>恰当选择主尺度和船型系数L&#x2F;B, Cp, 首部进流段，进水角等</p>
+</li>
+<li><p>以实验资料，圆圈P理论为依据，当船速给定时，避免处于波阻峰点</p>
+</li>
+<li><p>船型优化，主要依据Michell理论，应用现有优化技术，选择f(x,z)使Rw最小。有时船型改变不大，但能收到明显效果</p>
+</li>
+<li><p>造成有利干扰：球鼻首。船首兴波与球鼻首兴波产生有利干扰，可使总阻力下降10-15%.</p>
+<p>军舰、高速船由于首波峰的位置随航速后移，装球鼻首后无用，有装消波水翼的</p>
+</li>
+</ul>
+<p><strong>应用不同设计概念减小兴波阻力</strong>：双体船和多体船概念；使船体抬出水面设计概念；船体下潜设计概念；复合设计概念</p>
+<h4 id="破波阻力"><a href="#破波阻力" class="headerlink" title="破波阻力"></a>破波阻力</h4><p>成因：<br>对于方形系数较大的肥大船型,艏部水线进角大,艏柱又很陡直,对来流产生严重的阻塞作用,导致波峰翻卷,波浪破碎, 在破碎的波面周围和其后面形成湍流,在湍流的形成过程中伴随着有序运动的能量耗散,  这股湍流在扩散的过程中随来流流向船后尾流,由于有序运动的损失,显示出动量的亏损, 这种能量的损失或动量的亏损,体现为破波阻力。</p>
+<p>特征 ：<br>⚫ 波浪在首柱面向外翻卷<br>⚫ 卷入空气，出现白色泡<br>⚫ 破碎后以湍流形式流向后方，留在尾流中，而不再以波浪能量出现，故可在尾流中测量</p>
+<p>特性：<br>⚫ 是由于自由面引起的。将重叠模进行深水拖曳并进行尾流测量， 没有发现次尾流区<br>⚫ 破波阻力随Fn增大而增大，而且服从Froude的比较定律，即Fn数相等时，破波阻力系数相等<br>⚫ 丰满船破波阻力较大，压载情况下破波阻力要比满载时大，因为压载时B&#x2F;T值增大<br>⚫ 破波阻力除了与船型有关外，主要与B&#x2F;T和进流段长度有关。减少 B&#x2F;T，增大进流段长度，将能明显减少破波阻力<br>⚫ 理论和实验都证明，采用球鼻型船首能减少破波阻力，主要原因是减少船首波的陡直程度，而且球鼻型的船首在轻载（压载）时效果较大</p>
+<h4 id="阻力分类补充说明"><a href="#阻力分类补充说明" class="headerlink" title="阻力分类补充说明"></a>阻力分类补充说明</h4><p><img src="/images/%E8%88%B9%E8%88%B6%E5%BF%AB%E9%80%9F%E6%80%A7/%E9%9D%99%E6%B0%B4%E4%B8%AD%E8%88%B9%E8%88%B6%E6%80%BB%E9%98%BB%E5%8A%9B%E5%88%86%E7%B1%BB.png" loading="lazy"></p>
+<h2 id="附加阻力及总阻力近似估算"><a href="#附加阻力及总阻力近似估算" class="headerlink" title="附加阻力及总阻力近似估算"></a>附加阻力及总阻力近似估算</h2><h3 id="附体阻力"><a href="#附体阻力" class="headerlink" title="附体阻力"></a>附体阻力</h3><p>实船需安装舵、舭龙骨、轴包架、轴和轴支架、声纳等附体(<strong>不含螺旋桨</strong>)，由于水对附体作用而增加的那一部分阻力称为附体阻力。</p>
+<p>由于附体通常安装在水线以下较深的位置，且相对尺寸较小，兴波阻力通常很小，因而认为附体阻力的主要成分是摩擦阻力和粘压阻力。 </p>
+<p>支架等较短的附体，主要是粘压阻力，并可认为其阻力系数与速度无关；而舭龙骨、轴包套等较长的沿流线方向安装的附体，主要是摩擦阻力。</p>
+<p>确定附体阻力的方法：</p>
+<ul>
+<li>应用已有资料或经验公式估算</li>
+<li>应用模型试验确定附体阻力：通过带附体和不带附体船模试验所得到的总阻力之差来确定附体阻力；尺度效应；附体系数</li>
+</ul>
+<h3 id="空气阻力"><a href="#空气阻力" class="headerlink" title="空气阻力"></a>空气阻力</h3><p>船舶在航行中、船体水线以上部分和上层建筑与空气的相互作用而受到的阻力。<br>在空气阻力中，摩擦阻力只占极小部分，而主要部分是粘压阻力。它与船舶水上部分的外形以及与风的相对速度大小和方向有关。</p>
+<h3 id="波浪中的阻力增值"><a href="#波浪中的阻力增值" class="headerlink" title="波浪中的阻力增值"></a>波浪中的阻力增值</h3><p>汹涛阻力：船在风浪中航行时所增加的阻力称为波浪中阻力增值或称为汹涛阻力，记作Raw。<br>其大小与风浪大小、方向及船型、航速等因素有关。</p>
+<p>引起波浪阻力增加的原因：</p>
+<ul>
+<li>船体运动（主要是纵摇、升沉运动的影响）。与船体运动的幅值等参数有关</li>
+<li>船体对波浪的绕射作用：波浪遇到船体后，被船体绕射而产生反射波，该水波的能量就是船体阻力增值的一部分。</li>
+</ul>
+<p>波浪中的阻力增值问题相当复杂，已有的研究表明，影响波浪中阻力增值的因素主要有<strong>波浪</strong>和<strong>船型</strong>两方面。</p>
+<p>波浪阻力增值的处理与储备功率：</p>
+<ul>
+<li>由于波浪阻力增加，在保持静水中相同功率时，航速必然下降，这种航速的减少称为速度损失或简称失速。</li>
+<li>考虑波浪阻力增值，如要维持静水中相同航速，则功率必须较静水功率有所增加，所增加的功率称为<strong>储备功率</strong>。</li>
+</ul>
+<h3 id="总阻力近似估计"><a href="#总阻力近似估计" class="headerlink" title="总阻力近似估计"></a>总阻力近似估计</h3><ol>
+<li>根据船模系列试验资料估算阻力</li>
+<li>根据经验公式估算</li>
+<li>根据母型船数据估算<br>海军系数法：船型相近，大小速度差不多，主机类型相同，载重量、海况大致一样：海军系数C相同，C越大表示快速性越好<br>$$C&#x3D;\frac{\Delta^{\frac{2}{3}}·V^3}{P_e}$$</li>
+</ol>
+<h3 id="船模阻力试验"><a href="#船模阻力试验" class="headerlink" title="船模阻力试验"></a>船模阻力试验</h3><p>略</p>
+<h2 id="船型对阻力的影响"><a href="#船型对阻力的影响" class="headerlink" title="船型对阻力的影响"></a>船型对阻力的影响</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>优良船型的含义：<br>阻力性能优良船型是对某一定速度范围和航行环境而言的；讨论船型对阻力的影响必须与设计船速度范围相联系（未来将同时考虑航行环境）</p>
+<p>船舶分类及其主要阻力成分：<br>低速船：Fr&lt; 0.20<br> Rw很小, Rf与Rpv 主要;所以要减小Rf和Rpv,<br> Rf ∝S —减小S —船型肥短 —易产生旋涡—去流段防止Rpv增大<br>中速船   0.20&lt;Fr &lt; 0.30<br> Rw随V提高而增大, 既要减小Rw又要防止Rf和Rpv↑,<br>办法:选择有利船型参数 —(兴波)有利干扰<br>船型趋于瘦削—避免旋涡，减小粘压阻力<br>高速船   Fr&gt;0.30<br> Rw成为主要成分,力求减小Rw<br>办法：减小船首波系的波高—船体（前体）瘦长<br>高速船波浪长度大—首波在船尾难以实现有利干扰</p>
+<h3 id="船体主尺度的影响"><a href="#船体主尺度的影响" class="headerlink" title="船体主尺度的影响"></a>船体主尺度的影响</h3><p>排水量长度系数(瘦长系数)$\frac{\Delta}{(0.01L)^3}$</p>
+<p>由L变化，$\frac{\Delta}{(0.01L)^3}$的影响：<br>低速船：摩擦阻力占总阻力的主要成分，可达总阻力的70%以上。而Rr所占比例较小，因此当排水量一定时，尽可能L 减小，船型肥短，对阻力-舱容-造价均有利<br>高速船：剩余阻力占总阻力的比例较大，因此随着船长增大，即$\frac{\Delta}{(0.01L)^3}$减小，总阻力的变化情况与低速船有所不同，存在最佳船长Lopt</p>
+<h1 id="推进部分"><a href="#推进部分" class="headerlink" title="推进部分"></a>推进部分</h1><h2 id="螺旋桨水动力性能"><a href="#螺旋桨水动力性能" class="headerlink" title="螺旋桨水动力性能"></a>螺旋桨水动力性能</h2><h2 id="螺旋桨空泡性能"><a href="#螺旋桨空泡性能" class="headerlink" title="螺旋桨空泡性能"></a>螺旋桨空泡性能</h2><h2 id="螺旋桨设计"><a href="#螺旋桨设计" class="headerlink" title="螺旋桨设计"></a>螺旋桨设计</h2><h2 id="船舶快速性预报"><a href="#船舶快速性预报" class="headerlink" title="船舶快速性预报"></a>船舶快速性预报</h2></div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>大白兔奶糖</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://iwhite-rabbit.github.io/2024/10/09/Ship-Resistance-and-Propulsion/" title="船舶快速性">https://iwhite-rabbit.github.io/2024/10/09/Ship-Resistance-and-Propulsion/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2024/10/12/Marine-engineering-with-green-technologies-1/" rel="prev" title="绿色船舶动力系统Ⅰ"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">绿色船舶动力系统Ⅰ</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2024/09/28/Mechanics-of-Materials/" rel="next" title="材料力学"><span class="post-nav-text">材料力学</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2025 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> 大白兔奶糖</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.2.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="live-time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2024-05-28T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = ` ${passDay} 天 ${passHour} 小时 ${passMinute} 分 ${passSecond} 秒`;
+}
+blog_live_time();
+</script></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></body></html>
