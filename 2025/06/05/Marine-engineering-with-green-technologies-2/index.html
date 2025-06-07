@@ -14,15 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });</script><link rel="icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
     window.Yun = {}
     window.CONFIG = {"hostname":"iwhite-rabbit.github.io","root":"/","title":"奶糖写字的地方","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","fireworks":{"colors":null},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
-  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="绪论船舶动力装置的组成常见船舶动力系统的类型及特点船舶动力系统的评价指标新型船舶主机与选型柴油机分类、基本结构柴油机性能指标柴油机操纵系统柴油机特性船舶燃气轮机压气机燃烧室透平推进系统的动力配合性能船舶电力推进系统与船舶电站船舶动力系统的生态与环境保护要求">
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="绪论船舶动力装置的组成 组成： 主推进装置：推动船舶航行的装置，主机、传动设备、推进轴系、推进器 辅助装置：产生其他能量的装置，船舶电站、辅助锅炉装置、液压泵站、压缩空气系统 （以上两项合称船舶动力系统） 全船系统：保证船舶生命力和安全，消防、用水、救生、安全 甲板机械：保证船舶航向、停泊、装卸货物：锚泊、操舵、起重机械设备 机舱自动化系统：机舱内机械设备遥控及自动化  要求： 满足预定功能和性能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="绿色船舶动力系统Ⅱ">
 <meta property="og:url" content="https://iwhite-rabbit.github.io/2025/06/05/Marine-engineering-with-green-technologies-2/index.html">
 <meta property="og:site_name" content="奶糖写字的地方">
-<meta property="og:description" content="绪论船舶动力装置的组成常见船舶动力系统的类型及特点船舶动力系统的评价指标新型船舶主机与选型柴油机分类、基本结构柴油机性能指标柴油机操纵系统柴油机特性船舶燃气轮机压气机燃烧室透平推进系统的动力配合性能船舶电力推进系统与船舶电站船舶动力系统的生态与环境保护要求">
+<meta property="og:description" content="绪论船舶动力装置的组成 组成： 主推进装置：推动船舶航行的装置，主机、传动设备、推进轴系、推进器 辅助装置：产生其他能量的装置，船舶电站、辅助锅炉装置、液压泵站、压缩空气系统 （以上两项合称船舶动力系统） 全船系统：保证船舶生命力和安全，消防、用水、救生、安全 甲板机械：保证船舶航向、停泊、装卸货物：锚泊、操舵、起重机械设备 机舱自动化系统：机舱内机械设备遥控及自动化  要求： 满足预定功能和性能">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-06-05T06:25:00.000Z">
-<meta property="article:modified_time" content="2025-06-05T06:37:30.821Z">
+<meta property="article:modified_time" content="2025-06-07T09:14:38.867Z">
 <meta property="article:author" content="大白兔奶糖">
 <meta property="article:tag" content="船舶与海洋工程">
 <meta name="twitter:card" content="summary"><script>(function() {
@@ -42,7 +42,439 @@ IconifyProviders = {
     // Wait for 1 second before switching API hosts
     rotate: 1000,
   },
-};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="大白兔奶糖"><img width="96" loading="lazy" src="/images/avatar.jpeg" alt="大白兔奶糖"></a><div class="site-author-name"><a href="/about/">大白兔奶糖</a></div><span class="site-name">奶糖写字的地方</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">18</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">8</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:settings-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%AA%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%88%B9%E8%88%B6%E5%8A%A8%E5%8A%9B%E8%A3%85%E7%BD%AE%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">1.1.</span> <span class="toc-text">船舶动力装置的组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E8%88%B9%E8%88%B6%E5%8A%A8%E5%8A%9B%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%89%B9%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">常见船舶动力系统的类型及特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%88%B9%E8%88%B6%E5%8A%A8%E5%8A%9B%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87"><span class="toc-number">1.3.</span> <span class="toc-text">船舶动力系统的评价指标</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B0%E5%9E%8B%E8%88%B9%E8%88%B6%E4%B8%BB%E6%9C%BA%E4%B8%8E%E9%80%89%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">新型船舶主机与选型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%B4%E6%B2%B9%E6%9C%BA%E5%88%86%E7%B1%BB%E3%80%81%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">柴油机分类、基本结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%B4%E6%B2%B9%E6%9C%BA%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">2.2.</span> <span class="toc-text">柴油机性能指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%B4%E6%B2%B9%E6%9C%BA%E6%93%8D%E7%BA%B5%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.3.</span> <span class="toc-text">柴油机操纵系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%B4%E6%B2%B9%E6%9C%BA%E7%89%B9%E6%80%A7"><span class="toc-number">2.4.</span> <span class="toc-text">柴油机特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%88%B9%E8%88%B6%E7%87%83%E6%B0%94%E8%BD%AE%E6%9C%BA"><span class="toc-number">2.5.</span> <span class="toc-text">船舶燃气轮机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E6%B0%94%E6%9C%BA"><span class="toc-number">2.6.</span> <span class="toc-text">压气机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%87%83%E7%83%A7%E5%AE%A4"><span class="toc-number">2.7.</span> <span class="toc-text">燃烧室</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%8F%E5%B9%B3"><span class="toc-number">2.8.</span> <span class="toc-text">透平</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A8%E8%BF%9B%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8A%A8%E5%8A%9B%E9%85%8D%E5%90%88%E6%80%A7%E8%83%BD"><span class="toc-number">3.</span> <span class="toc-text">推进系统的动力配合性能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%88%B9%E8%88%B6%E7%94%B5%E5%8A%9B%E6%8E%A8%E8%BF%9B%E7%B3%BB%E7%BB%9F%E4%B8%8E%E8%88%B9%E8%88%B6%E7%94%B5%E7%AB%99"><span class="toc-number">4.</span> <span class="toc-text">船舶电力推进系统与船舶电站</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%88%B9%E8%88%B6%E5%8A%A8%E5%8A%9B%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%94%9F%E6%80%81%E4%B8%8E%E7%8E%AF%E5%A2%83%E4%BF%9D%E6%8A%A4%E8%A6%81%E6%B1%82"><span class="toc-number">5.</span> <span class="toc-text">船舶动力系统的生态与环境保护要求</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://iwhite-rabbit.github.io/2025/06/05/Marine-engineering-with-green-technologies-2/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="大白兔奶糖"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="奶糖写字的地方"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">绿色船舶动力系统Ⅱ</h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2025-06-05 14:25:00" itemprop="dateCreated datePublished" datetime="2025-06-05T14:25:00+08:00">2025-06-05</time></div><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E9%82%83%E5%AF%86%E7%BE%A4%E7%A7%91%E6%B5%8E%E4%B8%96%E7%A9%B7/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">邃密群科济世穷</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E8%88%B9%E8%88%B6%E4%B8%8E%E6%B5%B7%E6%B4%8B%E5%B7%A5%E7%A8%8B/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">船舶与海洋工程</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="船舶动力装置的组成"><a href="#船舶动力装置的组成" class="headerlink" title="船舶动力装置的组成"></a>船舶动力装置的组成</h2><h2 id="常见船舶动力系统的类型及特点"><a href="#常见船舶动力系统的类型及特点" class="headerlink" title="常见船舶动力系统的类型及特点"></a>常见船舶动力系统的类型及特点</h2><h2 id="船舶动力系统的评价指标"><a href="#船舶动力系统的评价指标" class="headerlink" title="船舶动力系统的评价指标"></a>船舶动力系统的评价指标</h2><h1 id="新型船舶主机与选型"><a href="#新型船舶主机与选型" class="headerlink" title="新型船舶主机与选型"></a>新型船舶主机与选型</h1><h2 id="柴油机分类、基本结构"><a href="#柴油机分类、基本结构" class="headerlink" title="柴油机分类、基本结构"></a>柴油机分类、基本结构</h2><h2 id="柴油机性能指标"><a href="#柴油机性能指标" class="headerlink" title="柴油机性能指标"></a>柴油机性能指标</h2><h2 id="柴油机操纵系统"><a href="#柴油机操纵系统" class="headerlink" title="柴油机操纵系统"></a>柴油机操纵系统</h2><h2 id="柴油机特性"><a href="#柴油机特性" class="headerlink" title="柴油机特性"></a>柴油机特性</h2><h2 id="船舶燃气轮机"><a href="#船舶燃气轮机" class="headerlink" title="船舶燃气轮机"></a>船舶燃气轮机</h2><h2 id="压气机"><a href="#压气机" class="headerlink" title="压气机"></a>压气机</h2><h2 id="燃烧室"><a href="#燃烧室" class="headerlink" title="燃烧室"></a>燃烧室</h2><h2 id="透平"><a href="#透平" class="headerlink" title="透平"></a>透平</h2><h1 id="推进系统的动力配合性能"><a href="#推进系统的动力配合性能" class="headerlink" title="推进系统的动力配合性能"></a>推进系统的动力配合性能</h1><h1 id="船舶电力推进系统与船舶电站"><a href="#船舶电力推进系统与船舶电站" class="headerlink" title="船舶电力推进系统与船舶电站"></a>船舶电力推进系统与船舶电站</h1><h1 id="船舶动力系统的生态与环境保护要求"><a href="#船舶动力系统的生态与环境保护要求" class="headerlink" title="船舶动力系统的生态与环境保护要求"></a>船舶动力系统的生态与环境保护要求</h1></div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>大白兔奶糖</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://iwhite-rabbit.github.io/2025/06/05/Marine-engineering-with-green-technologies-2/" title="绿色船舶动力系统Ⅱ">https://iwhite-rabbit.github.io/2025/06/05/Marine-engineering-with-green-technologies-2/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2025/04/19/BookList/" rel="next" title="书单"><span class="post-nav-text">书单</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2025 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> 大白兔奶糖</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.2.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="live-time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="大白兔奶糖"><img width="96" loading="lazy" src="/images/avatar.jpeg" alt="大白兔奶糖"></a><div class="site-author-name"><a href="/about/">大白兔奶糖</a></div><span class="site-name">奶糖写字的地方</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">18</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">8</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:settings-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%AA%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%88%B9%E8%88%B6%E5%8A%A8%E5%8A%9B%E8%A3%85%E7%BD%AE%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">1.1.</span> <span class="toc-text">船舶动力装置的组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E8%88%B9%E8%88%B6%E5%8A%A8%E5%8A%9B%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%89%B9%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">常见船舶动力系统的类型及特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%88%B9%E8%88%B6%E5%8A%A8%E5%8A%9B%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87"><span class="toc-number">1.3.</span> <span class="toc-text">船舶动力系统的评价指标</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B0%E5%9E%8B%E8%88%B9%E8%88%B6%E4%B8%BB%E6%9C%BA%E4%B8%8E%E9%80%89%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">新型船舶主机与选型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%B4%E6%B2%B9%E6%9C%BA%E5%88%86%E7%B1%BB%E3%80%81%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">柴油机分类、基本结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%B4%E6%B2%B9%E6%9C%BA%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">2.2.</span> <span class="toc-text">柴油机性能指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%B4%E6%B2%B9%E6%9C%BA%E6%93%8D%E7%BA%B5%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.3.</span> <span class="toc-text">柴油机操纵系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%B4%E6%B2%B9%E6%9C%BA%E7%89%B9%E6%80%A7"><span class="toc-number">2.4.</span> <span class="toc-text">柴油机特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%88%B9%E8%88%B6%E7%87%83%E6%B0%94%E8%BD%AE%E6%9C%BA"><span class="toc-number">2.5.</span> <span class="toc-text">船舶燃气轮机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E6%B0%94%E6%9C%BA"><span class="toc-number">2.6.</span> <span class="toc-text">压气机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%87%83%E7%83%A7%E5%AE%A4"><span class="toc-number">2.7.</span> <span class="toc-text">燃烧室</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%8F%E5%B9%B3"><span class="toc-number">2.8.</span> <span class="toc-text">透平</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A8%E8%BF%9B%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8A%A8%E5%8A%9B%E9%85%8D%E5%90%88%E6%80%A7%E8%83%BD"><span class="toc-number">3.</span> <span class="toc-text">推进系统的动力配合性能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%88%B9%E8%88%B6%E7%94%B5%E5%8A%9B%E6%8E%A8%E8%BF%9B%E7%B3%BB%E7%BB%9F%E4%B8%8E%E8%88%B9%E8%88%B6%E7%94%B5%E7%AB%99"><span class="toc-number">4.</span> <span class="toc-text">船舶电力推进系统与船舶电站</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%88%B9%E8%88%B6%E5%8A%A8%E5%8A%9B%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%94%9F%E6%80%81%E4%B8%8E%E7%8E%AF%E5%A2%83%E4%BF%9D%E6%8A%A4%E8%A6%81%E6%B1%82"><span class="toc-number">5.</span> <span class="toc-text">船舶动力系统的生态与环境保护要求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98"><span class="toc-number">6.</span> <span class="toc-text">习题</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://iwhite-rabbit.github.io/2025/06/05/Marine-engineering-with-green-technologies-2/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="大白兔奶糖"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="奶糖写字的地方"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">绿色船舶动力系统Ⅱ</h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2025-06-05 14:25:00" itemprop="dateCreated datePublished" datetime="2025-06-05T14:25:00+08:00">2025-06-05</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="修改时间：2025-06-07 17:14:38" itemprop="dateModified" datetime="2025-06-07T17:14:38+08:00">2025-06-07</time></div><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E9%82%83%E5%AF%86%E7%BE%A4%E7%A7%91%E6%B5%8E%E4%B8%96%E7%A9%B7/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">邃密群科济世穷</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E8%88%B9%E8%88%B6%E4%B8%8E%E6%B5%B7%E6%B4%8B%E5%B7%A5%E7%A8%8B/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">船舶与海洋工程</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="船舶动力装置的组成"><a href="#船舶动力装置的组成" class="headerlink" title="船舶动力装置的组成"></a>船舶动力装置的组成</h2><ul>
+<li><p>组成：</p>
+<p>主推进装置：推动船舶航行的装置，主机、传动设备、推进轴系、推进器</p>
+<p>辅助装置：产生其他能量的装置，船舶电站、辅助锅炉装置、液压泵站、压缩空气系统</p>
+<p>（以上两项合称船舶动力系统）</p>
+<p>全船系统：保证船舶生命力和安全，消防、用水、救生、安全</p>
+<p>甲板机械：保证船舶航向、停泊、装卸货物：锚泊、操舵、起重机械设备</p>
+<p>机舱自动化系统：机舱内机械设备遥控及自动化</p>
+</li>
+<li><p>要求：</p>
+<p>满足预定功能和性能、可靠性、经济性、减小或消除对人类健康危害和生态环境污染破坏、机动性、质量尺寸、续航能力</p>
+</li>
+</ul>
+<h2 id="常见船舶动力系统的类型及特点"><a href="#常见船舶动力系统的类型及特点" class="headerlink" title="常见船舶动力系统的类型及特点"></a>常见船舶动力系统的类型及特点</h2><p>a)    掌握各类型动力系统的工作原理、组成</p>
+<ul>
+<li><p>蒸汽轮机：</p>
+<p>锅炉产生蒸汽→推动蒸汽透平做功→齿轮减速机组→螺旋桨&#x2F;发电机</p>
+<p>组成：蒸汽锅炉、蒸汽轮机、凝汽器……</p>
+<p>锅炉、蒸汽过热器、空气预热器、高压汽轮机、低压汽轮机、主冷凝器、凝水泵、给水预热器、给水泵、减速齿轮、螺旋桨、循环水泵</p>
+</li>
+<li><p>燃气轮机：</p>
+<p>燃料在燃烧室内燃烧→燃气推动燃气透平做功→多级减速齿轮机组→螺旋桨&#x2F;发电机</p>
+<p>组成：压气机、燃烧室、燃气轮机</p>
+</li>
+<li><p>柴油机：</p>
+</li>
+<li><p>核动力装置：</p>
+</li>
+</ul>
+<p>b)    掌握各类型动力系统的最重要特点。如，柴油机动力装置经济性好，燃气轮机动力装置机动性好</p>
+<ul>
+<li><p>蒸汽轮机：</p>
+<p>优点：单机功率大；劳损部件少、工作可靠、寿命长；运转平稳可靠、振动噪声小；可使用劣质燃料；滑油消耗率低；</p>
+<p>缺点：热效率较低，燃油消耗率高，热经济型低；设备多，整个装置重量尺寸大；机动性差，启动时间长；</p>
+</li>
+<li><p>燃气轮机：</p>
+<p>优点：机组质量尺寸指标小；机动性好；运动平稳；滑油、冷却水消耗量低；</p>
+<p>缺点：工作可靠性差，寿命短；价格昂贵；舱内布置困难，进排气管道尺寸大；甲板存在大管道通过切口，影响船体强度；</p>
+</li>
+<li><p>柴油机：</p>
+<p>优点：经济性较高，油耗低，中、低速机可烧劣质燃料；机动性良好，操作简单，倒车方便；中高速机组质量轻，辅助设备少；</p>
+<p>缺点：单机功率较低；振动噪声大；中高速机寿命较低；低速时稳定性较差，影响低速航行；过载能力差；</p>
+</li>
+<li><p>核动力装置：</p>
+<p>优点：消耗极少燃料可以释放出巨大的能量；能发出极大功率；不需要消耗空气获得热能；</p>
+<p>缺点：重量尺寸较大、屏蔽系统质量大、操纵管理检查复杂；价格昂贵</p>
+</li>
+<li><p>联合动力装置：</p>
+<p>缺点：不同的燃料、备件储备较复杂；共同使用主减速器，结构复杂；机组不同类型，布置难度增加；</p>
+</li>
+<li><p>电力推进：</p>
+<p>优点：操纵性能好；舱室布置灵活，舱室空间利用率高；振动噪声小；低速经济性好；操纵性和机动性好；对外界负荷适应性好；减少温室气体和气体污染排放物；</p>
+<p>缺点：成本高；中间损耗大；设备对环境要求高；对操作人员要求高</p>
+</li>
+<li><p>特种动力装置（喷水推进）：</p>
+<p>优点：推进效率高；抗空泡能力强；操纵性、动力定位性能优异；工作平稳、噪声低；适应变工况能力强；吃水浅、保护性能好；日常维护和保养较为简易</p>
+</li>
+</ul>
+<h2 id="船舶动力系统的评价指标"><a href="#船舶动力系统的评价指标" class="headerlink" title="船舶动力系统的评价指标"></a>船舶动力系统的评价指标</h2><center>技术指标、经济指标、性能指标、排放环境指标</center>
+
+<p>技术指标（总指标）：</p>
+<ul>
+<li><p>功率指标：</p>
+<p>表示船舶做功能力</p>
+<p>指示功率$\Rightarrow$有效功率$\Rightarrow$轴功率$\Rightarrow$螺旋桨收到功率$\Rightarrow$螺旋桨推进功率$\Rightarrow$阻力功率（船舶有效功率）</p>
+<p>相对功率 &#x3D; 主机功率&#x2F;排水量 (kW&#x2F;t)</p>
+</li>
+<li><p>质量指标</p>
+<p>装置单位功率质量：质量&#x2F;功率</p>
+<p>装置相对质量：质量（kg）&#x2F;排水量（t）</p>
+</li>
+<li><p>尺寸指标</p>
+<p>机舱（面积或体积）饱和度：功率&#x2F;面积或体积</p>
+<p>机舱饱和度高，设备安放紧凑集中，管理维修的工作条件相对差</p>
+</li>
+</ul>
+<p>经济指标：反映动力装置的热能转换率</p>
+<ul>
+<li><p>动力装置燃料消耗率</p>
+<p>$$g_e&#x3D;\frac{G}{P_T} (kg&#x2F;kW·h)$$</p>
+<p>𝐺：动力装置每小时燃料消耗量，包括主机、辅机、辅助锅炉等全部热能设备的燃料消耗量（kg&#x2F;h）</p>
+<p>$P_T$：螺旋桨推力功率(kW)</p>
+</li>
+<li><p>动力装置有效热效率</p>
+<p>$$\eta_e&#x3D;\frac{3600P_T}{G·H_u}$$</p>
+<p>$H_u$：燃料低发热值，约为4.18 kJ&#x2F;kg</p>
+</li>
+<li><p>以上均为设计工况下的燃料和热经济性</p>
+</li>
+<li><p>每海里燃油消耗量</p>
+<p>$$g_m&#x3D;\frac{G}{v_s}$$</p>
+<p>$v_s$为船舶航速，$g_m$是综合性指标，，既考虑了动力装置本身的性能，也考虑了船舶航行性能；</p>
+<p>综合来说，航速较低可节约燃油，存在经济航速，可用经济航速降低货运成本；</p>
+<p>最大盈利航速还需要考虑船的折旧费，客货周转量、运输成本及利润等因素；</p>
+<p>最大盈利航速≠经济航速</p>
+</li>
+</ul>
+<p>性能指标：机动性、动力配合性能、可靠性、自动化程度、噪声振动控制性……</p>
+<p>排放环境指标：温室气体(GHG)排放，主要控制二氧化碳</p>
+<ul>
+<li>EEDI：船舶能效设计指数。是衡量船舶能效水平的一种方法，单位为（g&#x2F;t·nmile），单位运力的二氧化碳排量</li>
+</ul>
+<h1 id="新型船舶主机与选型"><a href="#新型船舶主机与选型" class="headerlink" title="新型船舶主机与选型"></a>新型船舶主机与选型</h1><h2 id="柴油机分类、基本结构"><a href="#柴油机分类、基本结构" class="headerlink" title="柴油机分类、基本结构"></a>柴油机分类、基本结构</h2><ul>
+<li><p>分类：</p>
+<ul>
+<li>按工作循环分：四冲程柴油机；二冲程柴油机</li>
+<li>按转速分：低速机：&lt;300  r&#x2F;min；中速机：300~1000  r&#x2F;min；高速机：&gt;1000  r&#x2F;min；活塞平均速度：冲程*转速&#x2F;30</li>
+<li>按结构特点分类：筒形活塞柴油机；十字头活塞柴油机</li>
+<li>按照气缸数目：单缸机；多缸机</li>
+<li>按照气缸排列方式分类 ：直列，船用柴油机多为此；V形，有较高的单 机功率和较小的比重量，中、高速机</li>
+<li>按是否能倒转：可倒转（大型低速机）；不可倒转</li>
+</ul>
+</li>
+<li><p>十字头活塞、筒型活塞的优缺点、用途</p>
+<p>筒型活塞：</p>
+<ul>
+<li><p>活塞裙部起向导作用，在侧推力的作用下，活塞与缸套磨损较大；</p>
+</li>
+<li><p>结构简单，紧凑，轻便；</p>
+</li>
+<li><p>用于中高速柴油机</p>
+</li>
+</ul>
+<p>十字头活塞：</p>
+<ul>
+<li><p>活塞与缸套间无侧推力，侧推力由十字头滑块和导板承受，活塞和缸套磨损较小，不易擦伤和老死；</p>
+</li>
+<li><p>柴油机高度和重量大，结构复杂；需在汽缸下部设置横隔板，以免气缸内的脏油，烟灰，燃气等漏入曲轴箱，污损曲轴箱底部的滑油</p>
+</li>
+<li><p>用于船用大型低速柴油机</p>
+</li>
+</ul>
+</li>
+<li><p>活塞-连杆。上下止点、行程、几何压缩比</p>
+<p>压缩室容积$V_c$：上止点容积</p>
+<p>气缸工作容积$V_h$：上下止点之间的容积</p>
+<p>气缸最大容积$V_a$：下止点容积</p>
+<p>总排量：所有气缸的工作容积</p>
+<p>（几何&#x2F;理论）压缩比：气缸最大容积$V_a$&#x2F;压缩室容积$V_c$ &#x3D; 1 + $\frac{V_h}{V_c}$</p>
+<p>压缩比在柴油机一般为12-22，过大or过小，柴油机的经济性均下降（汽油机8-12，点火）</p>
+<ul>
+<li><p>非增压较大，增压较小</p>
+</li>
+<li><p>中高速机较大，低速机较小</p>
+</li>
+<li><p>运转中的实际压缩比，取决于进排气正时，≠几何压缩比</p>
+</li>
+</ul>
+</li>
+<li><p>四冲程、二冲程基本工作原理。配气正时、重叠角、喷油提前角</p>
+<p>进气重叠角：进气提前角 + 排气延后角</p>
+<p>有利于提高换气质量，降低热负荷</p>
+<p>排气快终了时，废气流具有惯性，且惯性流在燃烧室内产生低压，帮助抽吸新鲜空气进入气缸，不会引起废气倒灌</p>
+<p>进气阀开启过早：废气将通过进气阀冲入进气管，产生废气倒灌</p>
+<p>进气阀关闭过晚：活塞上行使部分新鲜空气向外排出，降低压缩压力</p>
+<p>排气阀打开过早：使有效功损失增大</p>
+<p>排气阀关闭太迟：使废气重新吸入</p>
+<p>四冲程机凸轮轴与曲轴转速比1：2，二冲程机凸轮轴与曲轴转速比为 1：1</p>
+</li>
+<li><p>二冲程换气形式</p>
+<p>排气口略高于扫气口</p>
+<p>排气口开，扫气口开，扫气口关，排气口关</p>
+<p>约上止点前6°开始喷油，上止点后36°燃烧结束，排、扫气口开闭时刻分别为上下止点前后40°和30°左右</p>
+<p>直流扫气（中心对称图）：</p>
+<ul>
+<li><p>排气干净，换气质量好，不易混气；适用于超长行程机；缸套、活塞受热均匀，不易变形和产生裂缝；</p>
+</li>
+<li><p>有排气阀、结构复杂；</p>
+</li>
+</ul>
+<p>横流扫气：</p>
+<ul>
+<li><p>结构简单，管理方便；</p>
+</li>
+<li><p>先关扫气口后关排气口，形成过后排气，损失部分新鲜空气；扫气有死角，易新、废气混合；两侧气缸受热不均，易产生变形；</p>
+</li>
+</ul>
+<p>回流扫气：</p>
+<ul>
+<li><p>结构简单，扫、排气口位于同侧，便于增压器管理布置；</p>
+</li>
+<li><p>路程长，换气差，新废气易混；</p>
+</li>
+</ul>
+</li>
+<li><p>四冲程、二冲程对比</p>
+<ul>
+<li><p>船用低速柴油机均为二冲程机，中速和高速柴油机均为四冲程机</p>
+</li>
+<li><p>二冲程机换气时间短，换气质量差，效率低于四冲程机</p>
+</li>
+<li><p>二冲程机热负荷高，活塞、气缸盖、气缸、气阀温度高</p>
+</li>
+</ul>
+</li>
+<li><p>多缸机发火间隔角计算</p>
+<ul>
+<li><p>为保证柴油机运行的均匀性，各缸工作冲程应均匀分布在一个工作循环中。即各缸发火顺序间隔角$\theta$为：</p>
+<p>$$\theta&#x3D;720°&#x2F;i$$（四冲程）</p>
+<p>$$\theta&#x3D;360°&#x2F;i$$（二冲程）；其中i为缸数</p>
+</li>
+<li><p>缸数越多，做功间隔角越小，同时参与做功的气缸数越多，发动机运转越平稳</p>
+</li>
+<li><p>尽量避免相邻两个缸连续发火，以减轻相邻两缸之间的主轴承的负荷。 为此，最好在柴油机首、尾两端轮流发火</p>
+</li>
+</ul>
+</li>
+<li><p>增压的目的、增压的方式</p>
+<ul>
+<li><p>压缩空气提高空气密度，提高冲入气缸的空气量；</p>
+</li>
+<li><p>废气涡轮增压柴油机；机械传动增压柴油机；</p>
+</li>
+</ul>
+</li>
+<li><p>废气涡轮增压中的涡轮工作原理（见燃气轮机的turbine）、废气涡轮增压中的压气机原理（见燃气轮的压气机）</p>
+<ul>
+<li><p>涡轮：废气带动叶轮转动，工质热能→机械能</p>
+</li>
+<li><p>压气机：压缩空气，机械能→压力能</p>
+</li>
+<li><p>空气量增加+喷油量增加&#x3D;功率增加</p>
+</li>
+<li><p>船用主机和发电机原动柴油机全部采用废气涡轮增压</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="柴油机性能指标"><a href="#柴油机性能指标" class="headerlink" title="柴油机性能指标"></a>柴油机性能指标</h2><ul>
+<li><p>分类：</p>
+<ul>
+<li>指示指标：以工质对活塞作功为计算基准的指标Indicated</li>
+<li>有效指标：以曲轴输出功为计算基准的指标Brake&#x2F;Effective</li>
+</ul>
+</li>
+<li><p>平均指示压力(Indicated Mean Effective Pressure, IMEP)：</p>
+<p>单位气缸工作容积所作的循环指示功；可以认为是一个假想不变的压力pmi作用在活塞上，使活塞移动一个冲程所作功</p>
+<p>$p_𝑖$高表明单位气缸工作容积做功能力大，工作循环完善，气缸强化程度高；既定柴油机𝑝𝑖主要由循环供油量或负荷大小决定，还受换气质量，燃油雾化质量影响。（过量空气系数过高时，油气浓度过低，𝑝𝑖降低） </p>
+<p>一般而言，增压＞非增压；四冲程＞二冲程；直流扫气＞弯流扫气 </p>
+<p>多缸柴油机中，$𝑝_{𝑚𝑖}$是衡量各缸负荷均匀性的唯一可靠的参数</p>
+</li>
+<li><p>指示功率$𝑃_i$：单位时间，柴油机某个缸内工质推动活塞所做的功(kW)</p>
+</li>
+<li><p>平均有效压力（BMEP）,𝑝𝑚𝑒或𝑝e，$𝑝_{𝑚𝑒} &#x3D; 𝜂<em>𝑚⋅𝑝</em>{𝑚i}$，机械效率$𝜂_m&#x3D;\frac{P_e}{P_i}$</p>
+</li>
+<li><p>有效功率$P_e&#x3D;\frac{扭矩×转速}{9550}$</p>
+</li>
+<li><p>经济性指标：柴油机有效热效率$\eta$；燃油消耗率$𝑔_e$；润滑油消耗率</p>
+</li>
+</ul>
+<h2 id="柴油机操纵系统"><a href="#柴油机操纵系统" class="headerlink" title="柴油机操纵系统"></a>柴油机操纵系统</h2><p>柴油机操纵系统，是用来控制柴油机起动装置、调速装置、换向装置的整体机构。</p>
+<ul>
+<li><p>起动装置</p>
+<ul>
+<li>多缸机压缩空气起动，由空气分配器（或控制器）按照气缸发火顺序， 依次在膨胀行程之初压缩空气进入气缸；</li>
+<li>船用二冲程机、四冲程机压缩空气起动正时</li>
+<li>保证曲轴任何位置都能压缩空气起动的最少气缸数；</li>
+</ul>
+</li>
+<li><p>换向装置</p>
+<ul>
+<li>用于可倒转柴油机，执行机构调整各正时  </li>
+<li>双凸轮换向：轴向移动凸轮轴</li>
+<li>单凸轮换向：凸轮轴转过换向差动角</li>
+</ul>
+</li>
+<li><p>调速装置</p>
+<ul>
+<li><p>在转速范围内自动调节到转速范围内。</p>
+</li>
+<li><p>发电机柴油机，发电机柴油机和发电机是不稳定系统，必须采用调速器  </p>
+<p>船舶主机，主机和螺旋桨是稳定系统，如对航速没有要求，可只装限速器。</p>
+<p>现代船舶，对航速有稳定要求，用全制式调速器 </p>
+</li>
+<li><p>极限调速器：最高转速不超过规定值  </p>
+<p>定速调速器：用于发电柴油机  </p>
+<p>双制式调速器：维持最低转速，限制最高转速  </p>
+<p>全制式调速器：柴油机的全部运转范围内，均能自动调节供油量，以保持任一设定转速不变</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="柴油机特性"><a href="#柴油机特性" class="headerlink" title="柴油机特性"></a>柴油机特性</h2><p>船舶柴油机的工况：</p>
+<ul>
+<li>发电机工况：转速n不变</li>
+<li>主机工况（螺旋桨工况）：柴油机扭矩&#x3D;螺旋桨阻力矩，功率正比于转速的三次方</li>
+</ul>
+<p>速度特性：建立测量工况后（全负荷、超负荷、部分负荷），油门固定不动，不断增加负载使柴油机转速变化，测量出的一组特性。部分负荷速度特性运行时燃油消耗率较大，经济性较差。低速时气缸与活塞间漏气和散热损失明显，喷油泵的柱塞运动速度低，泄漏量大，每循环供油量较高速时小，故转矩小；高速时换气恶化，燃烧不良，摩擦损失大， 转矩降低 </p>
+<p>限制特性：使用时的最大功率边界线，测量出的一组特性。由等扭矩限制线+等排气温度限制线（或等过量空气系数限制线）组成  转速下降初期：扭矩为主要限制；转速下降后期：排温为主要限制 </p>
+<p>推进特性：为了方便柴油机直接带动螺旋桨而测量的特性。由于负载（螺旋桨）特性的约束𝑃𝑒′ &#x3D;(𝑛′&#x2F;𝑛𝑒)3⋅𝑃𝑒，测量时以额定工况点为参考，调整负载大小+输出扭矩，建立各个稳定测量工况点，测量得到的一组特性 </p>
+<p>负荷特性：为方便柴油机作为发电机原动机而测量的特性。由于负载（发电机）要求转速保持恒定，测量时维持柴油机输出转速不变，调整负载大小+输出扭矩，在各个测量点稳定后，测量得到的一组特性</p>
+<h2 id="船舶燃气轮机"><a href="#船舶燃气轮机" class="headerlink" title="船舶燃气轮机"></a>船舶燃气轮机</h2><h2 id="压气机"><a href="#压气机" class="headerlink" title="压气机"></a>压气机</h2><h2 id="燃烧室"><a href="#燃烧室" class="headerlink" title="燃烧室"></a>燃烧室</h2><h2 id="透平"><a href="#透平" class="headerlink" title="透平"></a>透平</h2><h1 id="推进系统的动力配合性能"><a href="#推进系统的动力配合性能" class="headerlink" title="推进系统的动力配合性能"></a>推进系统的动力配合性能</h1><ul>
+<li><p>船机桨</p>
+<p>机桨系统：扭矩平衡方程；桨船系统：力平衡方程；两个方程间依靠<strong>能量守恒、进速系数</strong>关联</p>
+</li>
+<li><p>推进型式：</p>
+<p>直接传动推进装置、间接传动推进装置、可调距螺旋桨推进装置、电力传动推进装置、喷水推进装置</p>
+</li>
+<li><p>推进系统的主要特性</p>
+<p>推力正比转速平方；扭矩正比转速平方；功率正比转速三次方；航速正比转速（阻力正比航速平方）</p>
+<p>螺距比对螺旋桨特性改变，进速系数对螺旋桨特性的改变  </p>
+<p>螺距比越大，特性曲线越陡，等转速下力矩越大，等力矩下转速越小 </p>
+</li>
+<li><p>船舶推进轴系和传动设备</p>
+<ul>
+<li><p>摩擦离合器</p>
+<p>盘式、圆锥式、圆柱式  </p>
+<p>传扭能力：锥&gt;盘&gt;柱（考虑离心力）  </p>
+<p>多片式摩擦离合器：径向尺寸大大减小，接合力减小，片数越多，离合器传递扭矩能力越大，且重量尺寸增加不多</p>
+</li>
+<li><p>减速齿轮箱</p>
+<p>垂直异中心传动：占机舱面积小，宜单轴尾机舱；主机重心高，影响船舶稳性，箱壳影响双层低结构；  </p>
+<p>水平异中心传动：主机重心低，对中部机舱、双机双桨动力装置布置方便，两主机间距离易保证，水平占机舱面积大；单机单桨船不利于机舱对称布置；  </p>
+<p>同心布置：发动机重心降低，发动机和螺旋桨同轴；高度减小，齿轮强度增加，可传递更大扭矩，适合单机单桨布置 </p>
+</li>
+<li><p>弹性联轴器</p>
+<p>调整轴系自振频率；降低扭振应力；降低主机波动力矩对齿轮啮合的冲击；减少轴系对中误差、船体变形对轴系和齿轮箱运转的不良影响</p>
+</li>
+<li><p>调距桨</p>
+<p>特性：在任何工况下均能吸收主机的全功率；用不同的转速和螺距比相配合，可得到所需要的船舶航速；在保持螺旋桨转速不变的情况下，改变螺距比，船舶可从正车最大航速到倒车最大航速；  </p>
+<p>优点：在任何工况下均能吸收主机的全功率；航行工况变化较大的船舶采用调距桨，可提高螺旋桨的平均功率；部分负荷下，经济性好；主机可使用不可反转的发动机；船舶具有良好的机动性和操纵性；延长发动机寿命；可不变转速适应工况和航速变化，为主机轴带辅机创造条件；</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="船舶电力推进系统与船舶电站"><a href="#船舶电力推进系统与船舶电站" class="headerlink" title="船舶电力推进系统与船舶电站"></a>船舶电力推进系统与船舶电站</h1><h1 id="船舶动力系统的生态与环境保护要求"><a href="#船舶动力系统的生态与环境保护要求" class="headerlink" title="船舶动力系统的生态与环境保护要求"></a>船舶动力系统的生态与环境保护要求</h1><h1 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h1><ul>
+<li><p>船舶辅助锅炉产生的蒸汽用于：某些动力机械；油水的加热；暖气和厨房</p>
+</li>
+<li><p>所选锅炉的蒸发量：（110%~120%）*（全船用蒸总量）</p>
+</li>
+<li><p>一般正常航行时，废气锅炉产生的蒸汽应：足够全船所需</p>
+</li>
+<li><p>船舶电站容量等于：船舶实际用电量最大的运行工况的电力符合+适当裕度</p>
+</li>
+<li><p>船舶电站的航行工况是指：船舶全速满载航行的电气设备运行工况</p>
+</li>
+<li><p>船舶有效功率是指船舶航行时克服水、风对船体阻力所消耗的功率，船体阻力取决于：船舶线型，船舶尺度，船舶吃水，船速，海况，航道</p>
+</li>
+<li><p>某柴油机压缩比13，燃烧室容积V，则气缸工作容积是：12V</p>
+</li>
+<li><p>某直列四冲程柴油机的配气相位如下：排气阀提前开启角A，排气阀滞后关闭角B，进气阀提前开启角C，进气阀滞后关闭角D，则该柴油机的气阀重叠角是：C+B</p>
+</li>
+<li><p>某四冲程柴油机进气提前角56°，进气滞后角45°则进气过程的曲柄转角是：56+180+45&#x3D;281°</p>
+</li>
+<li><p>某非电控船用二冲程柴油机，测量出某时刻驱动排气阀凸轮轴转速为120r&#x2F;min时，可以知道，该状态下柴油机完成一个工作循环所需时间为0.5s</p>
+</li>
+<li><p>提高柴油机功率的措施有：增加气缸直径，增大活塞行程，采用二冲程，提高进气压力</p>
+</li>
+<li><p>一台可倒转的六缸二冲程柴油机顺车时的发火顺序是1-5-3-6-2-4，可以推测，该柴油机倒车时的发火顺序应为：1-4-2-6-3-5-1</p>
+</li>
+<li><p>某六缸二冲程可倒转柴油机的发火顺序为1-5-3-6-2-4，采用压缩空气起动，起动正时为上止点前5度~上止点后100度。柴油机停车后，第4缸2位于上止点后3度位置。用压缩空气换向起动时，处于压缩空气进气的缸有4、1</p>
+</li>
+<li><p>船舶柴油机转速不变，功率随时变化的工况，被称为：发电机工况</p>
+</li>
+<li><p>柴油机的功率随转速按照三次方关系而变化的工况，称为：螺旋桨工况</p>
+</li>
+<li><p>固定柴油机喷油量调节机构，通过改变柴油机负荷来改变其转速，这样测量得到的是：速度特性</p>
+</li>
+<li><p>直接带动螺旋桨的柴油机，其运转特性是：推进特性</p>
+</li>
+<li><p>柴油机起动时，起动空气应在（膨胀行程）进去气缸</p>
+</li>
+<li><p>柴油机负荷、转速、循环供油量间的关系为：转速不变，负荷增加，循环供油量增加</p>
+</li>
+<li><p>柴油机调速器的主要目的是，当外界负荷变化时，通过改变（循环供油量）来维持或限制柴油机规定转速</p>
+</li>
+<li><p>根据船舶主机的工作特点，我国规定主机必须装设（极限）调速器</p>
+</li>
+<li><p>某船舶双燃料发动机的标定转速记作nb，标定功率记作Pb。航行中主机输出转速为30%nb时，相应的输出功率约为：2.7%Pb</p>
+</li>
+<li><p>柴油机按照速度特性工作时，功率正比于转速的 1 次方 （速度特性油门固定，每循环喷油量不变，平均有效压力、扭矩不变）</p>
+</li>
+<li><p>通常，机械式二冲程直流扫气式可倒转柴油机换向时，不需要动作的是：气缸注油器凸轮（排气凸轮、空气分配器凸轮、喷油泵凸轮需要）</p>
+</li>
+<li><p>柴油机的转速在（从标定转速下降后期）范围内，排气温度将受到等排气温度曲线的限制</p>
+</li>
+<li><p>测量柴油机的速度特性时，通过改变（外负荷）使柴油机输出转速发生变化</p>
+</li>
+<li><p>在中、大型民用船上，主柴油机分为低速机和大功率中速机二类，大功率中速机之所以是低速机的竞争者，主要是因为：</p>
+<p>体积小重量轻、燃用劣质油；可采用多机通过减速器驱动一个螺旋桨；合理选用减速比可以提高螺旋桨推进效率</p>
+</li>
+<li><p>现今船舶动力装置向电力推进系统发展的速度很快，主要在：显著地增加船体内可利用空间；可以使船型优化；提高船舶的机动性、可靠性和电站的可利用率方面比柴油机动力装置有更大的优势。</p>
+</li>
+<li><p>直接传动的推进装置，最突出的优点是：低速机油耗低，螺旋桨效率高</p>
+</li>
+<li><p>主机和螺旋桨间是直接传动，没有减速装置，有（传动轴系）</p>
+</li>
+<li><p>间接传动的推进装置的主要优点是：轴系布置自由</p>
+</li>
+<li><p>间接传动多应用于（中速）柴油机</p>
+</li>
+<li><p>为了提高船舶的机动性，可采用（除了单机单桨外的其它任何形式）的措施</p>
+</li>
+<li><p>船舶污底时，对推进装置的影响是：螺旋桨进速系数减小；螺旋桨扭矩系数增大；螺旋桨推进特性曲线变陡；螺旋桨扭矩系数变大</p>
+</li>
+<li><p>船舶稳定航行时：船速与转速成正比</p>
+</li>
+<li><p>某船标定功率为10000kW，标定转速100rpm；当转速下降为91rpm时，相应功率为10000×(91&#x2F;100)^3 &#x3D; 7536 kW（不保留小数点）</p>
+</li>
+<li><p>某船航速为20kn，船舶阻力为100kN，船舶有效阻力功率约为（1000×20×1.852×10^3&#x2F;3600 &#x3D; 10280）kW</p>
+</li>
+<li><p>某船舶推进装置采用四机并车推进单支螺旋桨，其中一台主机出现故障时，船舶航速可保持原设计航速的（87）%</p>
+<p>解：螺旋桨获得最大扭矩变为$\frac{3}{4}$；转速变为$\sqrt{\frac{3}{4}}$，功率变为$(\frac{3}{4})^\frac{3}{2}$</p>
+<p>船舶航行阻力不变时有航速正比于转速，航速变为$\sqrt{\frac{3}{4}}&#x3D;0.866$</p>
+</li>
+<li><p>某船舶推进装置采用四机并车推进单支螺旋桨，当船舶航速降至50%以下时，以使用（1）台主机为宜</p>
+<p>解：航速为50%，转速为50%，扭矩为25%，一台主机</p>
+</li>
+<li><p>和新船相比较，船舶污底时，如主机油门固定不变，则：主机转速下降，船舶航速下降，螺旋桨推力增加</p>
+<p>解：船舶污底，阻力增加，进速系数下降</p>
+</li>
+<li><p>船舶空载航行时，对推进装置配合点的影响是：螺旋桨推进特性曲线变平坦；船舶吃水减小，船舶阻力减小；为了使主机转速不变，需减小主机油门</p>
+</li>
+<li><p>在大风浪中航行的船舶发生飞车现象，正确的是：</p>
+<ul>
+<li><p>船舶纵向摇摆，螺旋桨有可能露出水面</p>
+</li>
+<li><p>柴油机扭矩超过螺旋桨的阻转矩</p>
+</li>
+<li><p>为避免飞车，应该适当增加船舶后部的压载水量</p>
+</li>
+<li><p>主机应设置限速器或全制调速器</p>
+</li>
+<li><p>为避免飞车，可适当调低调速器的飞车设定转速</p>
+</li>
+</ul>
+</li>
+<li><p>船舶推进装置的性能是由（主机性能；传动设备性能；螺旋桨性能；船体性能）决定</p>
+</li>
+<li><p>船速由螺旋桨的尺寸和转速来保证，选择主机功率与转速必须适应螺旋桨的需要。最佳螺旋桨转速的选择是以（降低船舶造价；船舶燃油费用最低）为根据</p>
+</li>
+</ul>
+</div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>大白兔奶糖</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://iwhite-rabbit.github.io/2025/06/05/Marine-engineering-with-green-technologies-2/" title="绿色船舶动力系统Ⅱ">https://iwhite-rabbit.github.io/2025/06/05/Marine-engineering-with-green-technologies-2/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2025/04/19/BookList/" rel="next" title="书单"><span class="post-nav-text">书单</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2025 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> 大白兔奶糖</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.2.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="live-time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
   setTimeout(blog_live_time, 1000);
   const start = new Date('2024-05-28T00:00:00');
   const now = new Date();
