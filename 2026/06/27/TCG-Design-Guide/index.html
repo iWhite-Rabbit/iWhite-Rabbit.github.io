@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="大白兔奶糖"><meta name="copyright" content="大白兔奶糖"><meta name="generator" content="Hexo 7.2.0"><meta name="theme" content="hexo-theme-yun"><title>TCG卡牌设计 | 奶糖写字的地方</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"iwhite-rabbit.github.io","root":"/","title":"奶糖写字的地方","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","fireworks":{"colors":null},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="第一编来自《卡灵时代》设计师的公开教程 分析毫厘：什么是TCG相关概念TCG：Trading Card Game，集换式卡牌游戏，是一种特定销售方式的卡牌游戏，本质上还是构筑式卡牌游戏； CCG与TCG的区别主要就在于能不能实现游戏玩家之间的卡牌交换； LCG与TCG的区别主要就在于购买卡牌的方式是一次性全部买够还是随机抽卡； 核心元素卡牌、卡组、手牌、交互、环境； 通过抽卡或交换获得卡牌，卡牌的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCG卡牌设计">
+<meta property="og:url" content="https://iwhite-rabbit.github.io/2026/06/27/TCG-Design-Guide/index.html">
+<meta property="og:site_name" content="奶糖写字的地方">
+<meta property="og:description" content="第一编来自《卡灵时代》设计师的公开教程 分析毫厘：什么是TCG相关概念TCG：Trading Card Game，集换式卡牌游戏，是一种特定销售方式的卡牌游戏，本质上还是构筑式卡牌游戏； CCG与TCG的区别主要就在于能不能实现游戏玩家之间的卡牌交换； LCG与TCG的区别主要就在于购买卡牌的方式是一次性全部买够还是随机抽卡； 核心元素卡牌、卡组、手牌、交互、环境； 通过抽卡或交换获得卡牌，卡牌的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-27T02:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-12T02:59:08.523Z">
+<meta property="article:author" content="大白兔奶糖">
+<meta property="article:tag" content="卡牌">
+<meta name="twitter:card" content="summary"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="大白兔奶糖"><img width="96" loading="lazy" src="/images/avatar.jpeg" alt="大白兔奶糖"></a><div class="site-author-name"><a href="/about/">大白兔奶糖</a></div><span class="site-name">奶糖写字的地方</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">19</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">8</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:settings-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%BC%96"><span class="toc-number">1.</span> <span class="toc-text">第一编</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90%E6%AF%AB%E5%8E%98%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AFTCG"><span class="toc-number">1.1.</span> <span class="toc-text">分析毫厘：什么是TCG</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.1.</span> <span class="toc-text">相关概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%83%E7%B4%A0"><span class="toc-number">1.1.2.</span> <span class="toc-text">核心元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BE%E9%87%8C%E6%8C%91%E4%B8%80%EF%BC%9A%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%BB%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">百里挑一：如何选择主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text">两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E5%85%B3%E6%B3%A8%E7%82%B9"><span class="toc-number">1.2.2.</span> <span class="toc-text">重要关注点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%B5%AA%E6%B7%98%E6%B2%99%EF%BC%9A%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.3.</span> <span class="toc-text">大浪淘沙：设计流程详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B"><span class="toc-number">1.3.1.</span> <span class="toc-text">如何开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%9B%E6%96%B0%E7%8E%A9%E6%B3%95"><span class="toc-number">1.3.2.</span> <span class="toc-text">如何创新玩法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%9B%86%E5%90%88"><span class="toc-number">1.3.3.</span> <span class="toc-text">创建集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%8A%80%E8%83%BD%E5%85%83"><span class="toc-number">1.3.4.</span> <span class="toc-text">设置技能元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%8D%A1%E7%89%8C-%E5%8D%A1%E7%BB%84%E7%89%B9%E8%89%B2"><span class="toc-number">1.3.5.</span> <span class="toc-text">设计卡牌&#x2F;卡组特色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%88%9D%E6%AD%A5%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.6.</span> <span class="toc-text">数值初步配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%88%98%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.3.7.</span> <span class="toc-text">对战规则设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E8%BF%AD%E4%BB%A3"><span class="toc-number">1.3.8.</span> <span class="toc-text">测试迭代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A3%E4%BC%A0%E4%B8%8E%E5%8F%91%E5%94%AE"><span class="toc-number">1.3.9.</span> <span class="toc-text">宣传与发售</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%89%E6%9C%AC%E6%89%A7%E8%A6%81%EF%BC%9A%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%87%8D%E7%82%B9"><span class="toc-number">1.4.</span> <span class="toc-text">秉本执要：需要注意的重点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9C3%E2%80%9D%E7%9A%84%E5%A6%99%E7%94%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text">“3”的妙用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E5%8F%8C%E6%96%B9%E8%A7%92%E5%BA%A6%E6%80%9D%E8%80%83"><span class="toc-number">1.4.2.</span> <span class="toc-text">从双方角度思考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%90%88%E7%8E%A9%E5%AE%B6%E7%9B%B4%E8%A7%89%E4%B8%8E%E8%AE%A4%E7%9F%A5"><span class="toc-number">1.4.3.</span> <span class="toc-text">符合玩家直觉与认知</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%9B%E5%BE%80%E4%BD%95%E5%A4%84%EF%BC%9A%E8%BF%9B%E9%98%B6%E6%8B%93%E5%B1%95"><span class="toc-number">1.5.</span> <span class="toc-text">君往何处：进阶拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E6%97%A0%E6%AD%A2%E5%A2%83"><span class="toc-number">1.5.1.</span> <span class="toc-text">学无止境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E7%9A%84%E4%B9%A6%E7%B1%8D"><span class="toc-number">1.5.2.</span> <span class="toc-text">推荐的书籍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E7%9A%84%E8%A7%86%E9%A2%91"><span class="toc-number">1.5.3.</span> <span class="toc-text">推荐的视频</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%8A%80%E8%83%BD"><span class="toc-number">1.5.4.</span> <span class="toc-text">其他技能</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%BC%96"><span class="toc-number">2.</span> <span class="toc-text">第二编</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-1"><span class="toc-number">2.1.</span> <span class="toc-text">Lesson 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-2"><span class="toc-number">2.2.</span> <span class="toc-text">Lesson 2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-3"><span class="toc-number">2.3.</span> <span class="toc-text">Lesson 3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-4"><span class="toc-number">2.4.</span> <span class="toc-text">Lesson 4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-5"><span class="toc-number">2.5.</span> <span class="toc-text">Lesson 5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-6"><span class="toc-number">2.6.</span> <span class="toc-text">Lesson 6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-7"><span class="toc-number">2.7.</span> <span class="toc-text">Lesson 7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-8"><span class="toc-number">2.8.</span> <span class="toc-text">Lesson 8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-9"><span class="toc-number">2.9.</span> <span class="toc-text">Lesson 9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-10"><span class="toc-number">2.10.</span> <span class="toc-text">Lesson 10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-11"><span class="toc-number">2.11.</span> <span class="toc-text">Lesson 11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-12"><span class="toc-number">2.12.</span> <span class="toc-text">Lesson 12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-13"><span class="toc-number">2.13.</span> <span class="toc-text">Lesson 13</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-14"><span class="toc-number">2.14.</span> <span class="toc-text">Lesson 14</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-15"><span class="toc-number">2.15.</span> <span class="toc-text">Lesson 15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-16"><span class="toc-number">2.16.</span> <span class="toc-text">Lesson 16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-17"><span class="toc-number">2.17.</span> <span class="toc-text">Lesson 17</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-18"><span class="toc-number">2.18.</span> <span class="toc-text">Lesson 18</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-19"><span class="toc-number">2.19.</span> <span class="toc-text">Lesson 19</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lesson-20"><span class="toc-number">2.20.</span> <span class="toc-text">Lesson 20</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://iwhite-rabbit.github.io/2026/06/27/TCG-Design-Guide/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="大白兔奶糖"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="奶糖写字的地方"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">TCG卡牌设计</h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2026-06-27 10:00:00" itemprop="dateCreated datePublished" datetime="2026-06-27T10:00:00+08:00">2026-06-27</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="修改时间：2026-08-12 10:59:08" itemprop="dateModified" datetime="2026-08-12T10:59:08+08:00">2026-08-12</time></div><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E6%88%96%E8%AE%B8%E8%BF%98%E4%BC%9A%E6%9C%89%E5%85%B6%E4%BB%96/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">或许还会有其他</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%8D%A1%E7%89%8C/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">卡牌</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h1 id="第一编"><a href="#第一编" class="headerlink" title="第一编"></a>第一编</h1><p>来自《卡灵时代》设计师的公开教程</p>
+<h2 id="分析毫厘：什么是TCG"><a href="#分析毫厘：什么是TCG" class="headerlink" title="分析毫厘：什么是TCG"></a>分析毫厘：什么是TCG</h2><h3 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h3><p>TCG：Trading Card Game，集换式卡牌游戏，是一种特定销售方式的卡牌游戏，本质上还是构筑式卡牌游戏；</p>
+<p>CCG与TCG的区别主要就在于能不能实现游戏玩家之间的卡牌交换；</p>
+<p>LCG与TCG的区别主要就在于购买卡牌的方式是一次性全部买够还是随机抽卡；</p>
+<h3 id="核心元素"><a href="#核心元素" class="headerlink" title="核心元素"></a>核心元素</h3><p>卡牌、卡组、手牌、交互、环境；</p>
+<p>通过抽卡或交换获得卡牌，卡牌的收集构筑形成卡组，从卡组中抽牌得到手牌，对手牌进行使用与其他玩家交互，玩家的交互形成了卡牌游戏的环境；</p>
+<h2 id="百里挑一：如何选择主题"><a href="#百里挑一：如何选择主题" class="headerlink" title="百里挑一：如何选择主题"></a>百里挑一：如何选择主题</h2><h3 id="两种方式"><a href="#两种方式" class="headerlink" title="两种方式"></a>两种方式</h3><p>已有热门IP的周边化；自研原创抽象IP；各自的优缺点；</p>
+<h3 id="重要关注点"><a href="#重要关注点" class="headerlink" title="重要关注点"></a>重要关注点</h3><p>自由度高：给与玩家战术和选择自由</p>
+<p>受众基础：能否在推广初期获得支持</p>
+<p>个人兴趣：一定要让自己喜欢</p>
+<p>拓展空间：各种类型角色都能允许</p>
+<p>可识别度：如何让人印象深刻</p>
+<p>话题可能：如何形成话题传播梗，“原神，启动！”</p>
+<h2 id="大浪淘沙：设计流程详解"><a href="#大浪淘沙：设计流程详解" class="headerlink" title="大浪淘沙：设计流程详解"></a>大浪淘沙：设计流程详解</h2><h3 id="如何开始"><a href="#如何开始" class="headerlink" title="如何开始"></a>如何开始</h3><p>先设计怪兽单位卡牌再完善规则？角色优先</p>
+<p>先设计玩法流程规则再设计卡牌？玩法优先</p>
+<p>找到独属的核心亮点</p>
+<p>角色优先的情况：角色设计优势？画风独特？角色可选种类丰富？角色已有成熟受众群体？</p>
+<p>玩法优先的情况：玩法原创特色？玩法轻松易学？玩法有效改良现有竞品？玩法经过时间考验？</p>
+<h3 id="如何创新玩法"><a href="#如何创新玩法" class="headerlink" title="如何创新玩法"></a>如何创新玩法</h3><p>针对五个核心要素（卡牌，卡组，手牌，交互，环境）进行改良</p>
+<p>卡牌：分成几个种类？一定要一样大小吗？一定要背面一样吗？只有一种方向吗？可以透明吗？可以拼图吗？……</p>
+<p>卡组：数量上限多少？只有一个卡组吗？一定背面朝上吗？用完去弃牌区域吗？可以攻击卡组吗？一定放在场外吗？……</p>
+<p>手牌：手牌有数量上限吗？需要费用机制吗？可以同时打出多少张？每回合只能抽一张牌吗？手牌可以交互吗？手牌可以公开吗？……</p>
+<p>交互：一定只有对战吗？一定要比较数值吗？一定是削减血量吗？一定是怪物冲突吗？卡牌位置固定吗？回合外干扰好吗？……</p>
+<p>环境：一定要有主流吗？一定要有字段吗？卡牌强度要一致吗？玩家必须获胜吗？强者恒强吗？新卡一定淘汰旧卡吗？……</p>
+<h3 id="创建集合"><a href="#创建集合" class="headerlink" title="创建集合"></a>创建集合</h3><p>创建集合就是指你的卡牌需要分成哪些种类，这些种类里又有哪些细分</p>
+<p>一般涉及：玩家化身，生物单位，建筑单位，武器装备，即时效果，持续效果，资源代表</p>
+<h3 id="设置技能元"><a href="#设置技能元" class="headerlink" title="设置技能元"></a>设置技能元</h3><p>技能元是游戏里可以允许的最小操作行为，一切卡牌效果都是技能元的多种组合</p>
+<p>每回合一次，同名每回合一次，整局游戏仅一次，抽牌，召唤，攻击，受伤，发动，离场，强化，弱化，移动，控制，干扰，辅助，弃牌，检索，抗性，回收，续航，变身，收缴……</p>
+<p>卡牌效果&#x3D;条件（1-2个技能元）+作用（1-2个技能元）</p>
+<p>示例：怪兽A的效果：从手牌中召唤的场上时，从卡组抽一张牌</p>
+<p>示例：怪兽B的效果：此单位离场时，从墓地召唤一张牌到场上并随机弱化敌方一个怪兽</p>
+<p>示例：设计一个以“强化”为主题的卡组，思考“如何产生强化”与“如何利用强化”，比如“某单位召唤时选择一个场上单位强化”、“某单位离场时选择手上一个单位强化”、“弃一张手牌使场上一个单位强化”（如何产生）；“我方存在强化单位时某单位获得抗性”、“某强化过的单位可以变身为另一张牌”（如何利用）……</p>
+<h3 id="设计卡牌-卡组特色"><a href="#设计卡牌-卡组特色" class="headerlink" title="设计卡牌&#x2F;卡组特色"></a>设计卡牌&#x2F;卡组特色</h3><p>需要为不同游戏性格的玩家提供合适的玩法&#x2F;卡组</p>
+<p>电子游戏玩家通常有：杀戮者，成就者，社交者，探索者</p>
+<p>引用到卡牌游戏中，大致有：</p>
+<p>战斗型玩家：数值优势、战斗激励</p>
+<p>（战斗激励示例：破坏对方怪兽时可以抽牌？可以从墓地回收？可以使对方无法响应己方的操作？）</p>
+<p>防守型玩家：阵地运营、决不冒进</p>
+<p>操作型玩家：卡牌搭配、流程组合</p>
+<p>建造型玩家：目标明确、完成任务</p>
+<p>以《游戏王》部分卡组为例：</p>
+<table>
+<thead>
+<tr>
+<th align="center">卡组名称</th>
+<th align="center">卡组特色</th>
+<th align="center">满足心理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">炎王</td>
+<td align="center">卡牌破坏</td>
+<td align="center">破坏掀桌</td>
+</tr>
+<tr>
+<td align="center">白银城</td>
+<td align="center">陷阱大师</td>
+<td align="center">资源交换</td>
+</tr>
+<tr>
+<td align="center">转生炎兽</td>
+<td align="center">转生变身</td>
+<td align="center">进化变强</td>
+</tr>
+<tr>
+<td align="center">宝玉兽</td>
+<td align="center">怪变魔法</td>
+<td align="center">完成任务</td>
+</tr>
+<tr>
+<td align="center">超重武者</td>
+<td align="center">全怪守表</td>
+<td align="center">另类构筑</td>
+</tr>
+<tr>
+<td align="center">珠泪</td>
+<td align="center">墓转资源</td>
+<td align="center">抽奖惊喜</td>
+</tr>
+</tbody></table>
+<p>以《数码宝贝》部分卡组为例：</p>
+<table>
+<thead>
+<tr>
+<th align="center">卡组名称</th>
+<th align="center">卡组特色</th>
+<th align="center">满足心理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">红色</td>
+<td align="center">战力强化 一拳多判</td>
+<td align="center">一拳超人</td>
+</tr>
+<tr>
+<td align="center">蓝色</td>
+<td align="center">卡牌回弹 激活连击</td>
+<td align="center">多次攻击</td>
+</tr>
+<tr>
+<td align="center">黄色</td>
+<td align="center">回血反击 规则消灭</td>
+<td align="center">以逸待劳</td>
+</tr>
+<tr>
+<td align="center">绿色</td>
+<td align="center">强制休息 快速进化</td>
+<td align="center">场面压制</td>
+</tr>
+<tr>
+<td align="center">黑色</td>
+<td align="center">阻挡抗性 退化嘲讽</td>
+<td align="center">稳如泰山</td>
+</tr>
+<tr>
+<td align="center">紫色</td>
+<td align="center">墓转资源 效果消灭</td>
+<td align="center">操作大师</td>
+</tr>
+</tbody></table>
+<h3 id="数值初步配置"><a href="#数值初步配置" class="headerlink" title="数值初步配置"></a>数值初步配置</h3><p>设计初期可以使用EXCEL等表格工具直接录入卡牌数据，有助于对平衡的把控和调整</p>
+<h3 id="对战规则设计"><a href="#对战规则设计" class="headerlink" title="对战规则设计"></a>对战规则设计</h3><p>对战准备：卡组构筑规则？上限与同名卡数量？场地摆放方式（比如墓地在主卡组的哪个方位？前方还是后方）？是否需要工具？</p>
+<p>分先后和调度：BO1？BO3？先后手是随机还是胜者定？是否需要调度？如何平衡先后手？</p>
+<p>玩家回合：交替进行回合？各自部署暗牌再同时统一结算？</p>
+<p>玩家回合-抽牌阶段：从卡组抽1还是抽2还是抽到固定数额？只能从一个卡组抽？能不抽？能从底抽？</p>
+<p>玩家回合-准备阶段：在特定时点进行判定的效果？对卡牌进行横置后的重置？</p>
+<p>玩家回合-主要阶段：游戏的交互重点</p>
+<p>玩家回合-结束阶段：手牌上限检查？部分卡牌效果结束？卡牌状态检查？</p>
+<p>胜利条件：消灭玩家化身的生命值？消灭对方所有的召唤？抽光自己的奖赏卡？对方伤害积分累计达到上限？卡组耗尽？场上卡牌呈现出特定排列方式（其实就是麻将）？</p>
+<h3 id="测试迭代"><a href="#测试迭代" class="headerlink" title="测试迭代"></a>测试迭代</h3><p>样品、测试；丰富的玩家类型？专业的玩家类型？多次的数据记录？辩证地听取，记录好每次的改动原因</p>
+<h3 id="宣传与发售"><a href="#宣传与发售" class="headerlink" title="宣传与发售"></a>宣传与发售</h3><p>宣传：略</p>
+<p>发售：早做准备，至少一年，最好三年的运营预期</p>
+<p>发售示例：预组01+预组02+预组03，补充包01，特殊产品，预组04+预组05+预组06，补充包02，特殊产品，预组07+预组08，补充包03，特殊预组+复刻产品，补充包04……</p>
+<h2 id="秉本执要：需要注意的重点"><a href="#秉本执要：需要注意的重点" class="headerlink" title="秉本执要：需要注意的重点"></a>秉本执要：需要注意的重点</h2><h3 id="“3”的妙用"><a href="#“3”的妙用" class="headerlink" title="“3”的妙用"></a>“3”的妙用</h3><p>“3”是非常神奇的数字，一旦有3个要素就能形成最简单的轮回克制关系与稳定性，而人类心理上对于陌生要素的认知上限一般正好在3种类；</p>
+<p>实体卡牌不同于电子游戏的结算可以通过程序完成，往往必须依靠人脑进行结算，尽可能简化玩家的认知和处理任务量，才能让玩家更好地享受游戏乐趣本身；</p>
+<p>当一个效果的文本过于复杂时，往往会使得该卡牌所有者的对手玩家获得不好的体验；</p>
+<h3 id="从双方角度思考"><a href="#从双方角度思考" class="headerlink" title="从双方角度思考"></a>从双方角度思考</h3><p>不能只专注于玩家“单方操作起来好玩”，同时需要考虑对方在面对这样的卡牌时体验如何；</p>
+<p>《游戏王》早期失衡的若干实例</p>
+<h3 id="符合玩家直觉与认知"><a href="#符合玩家直觉与认知" class="headerlink" title="符合玩家直觉与认知"></a>符合玩家直觉与认知</h3><p>顺从心理直觉，减少为何的设计和诡异的偏差点</p>
+<p>避免卡牌的卡图形象与卡名或效果设定毫无关联（代入感）</p>
+<p>避免属性或颜色搭配违和（代入感）</p>
+<p>一个系列卡牌里尽可能设计相同的效果触发条件，减少细节偏差</p>
+<p>深入观察玩家打牌的操作习惯，操作动作尽可能符合大众习惯</p>
+<p>卡牌文本的排版要尽可能便于阅读，尽可能避免歧义和难懂的措辞</p>
+<h2 id="君往何处：进阶拓展"><a href="#君往何处：进阶拓展" class="headerlink" title="君往何处：进阶拓展"></a>君往何处：进阶拓展</h2><h3 id="学无止境"><a href="#学无止境" class="headerlink" title="学无止境"></a>学无止境</h3><p>学会像个游戏设计师一样玩其他游戏，学会想个玩家一样玩自己的游戏</p>
+<p>远不止一两种TCG，热门产品都需要尝试与分析</p>
+<p>远不止卡牌游戏，游戏好玩的原因是共通的</p>
+<p>远不止个人癖好，玩家一定是多元的</p>
+<h3 id="推荐的书籍"><a href="#推荐的书籍" class="headerlink" title="推荐的书籍"></a>推荐的书籍</h3><p>《竞技游戏设计完全教程》</p>
+<p>《游戏设计梦工厂》</p>
+<h3 id="推荐的视频"><a href="#推荐的视频" class="headerlink" title="推荐的视频"></a>推荐的视频</h3><p>旅法师营地《游戏王实卡发函简史》系列</p>
+<p>万智牌设计师《20条经验》演讲</p>
+<h3 id="其他技能"><a href="#其他技能" class="headerlink" title="其他技能"></a>其他技能</h3><p>美术能力，表达能力，管理能力</p>
+<h1 id="第二编"><a href="#第二编" class="headerlink" title="第二编"></a>第二编</h1><p>来自《万智牌》设计师Mark Rosewater在Game Developers Conference的公开演讲</p>
+<h2 id="Lesson-1"><a href="#Lesson-1" class="headerlink" title="Lesson 1"></a>Lesson 1</h2><p>Fight against human nature is a losing battle</p>
+<p>change your game to match your players</p>
+<p>游戏需要适应玩家</p>
+<h2 id="Lesson-2"><a href="#Lesson-2" class="headerlink" title="Lesson 2"></a>Lesson 2</h2><p>Aesthetics matter</p>
+<p>美感很重要，不要对抗人的感知，不要做出感官上使人不适应的东西</p>
+<p>实例：卡牌”Griselbrand”受到大量玩家投诉，只因它攻击力为7+防御力为7+可以使用7点生命来抓7张牌，但它的费用是8点法术力</p>
+<h2 id="Lesson-3"><a href="#Lesson-3" class="headerlink" title="Lesson 3"></a>Lesson 3</h2><p>Resonance is important</p>
+<p>Designers don’t have to start from scratch</p>
+<p>共鸣很重要，人有预载信息，利用人对已知事物的情感来融入游戏</p>
+<h2 id="Lesson-4"><a href="#Lesson-4" class="headerlink" title="Lesson 4"></a>Lesson 4</h2><p>Make use of piggybacking</p>
+<p>借用常识</p>
+<p>Resonance has another valuable use——teaching tool for game mechanics</p>
+<p>实例：从”Akroan Lion”到”Akroan Horse”，借用特洛伊木马解释机制</p>
+<p>实例：《Plant VS. Zombies》（植物大战僵尸）,由万智牌玩家设计的塔防游戏，为了解释在这个塔防游戏中的“守城士兵”为何不能自由移动到更需要他的地方，因而专门选择了“植物”这种一看就不能动的概念，玩家看到也觉得这个单位一动不动才是合理的；为了设计“成群逼近的侵略者”而专门选择了“僵尸”，玩家对僵尸的预期就是“大群的缓慢逼近”；植物和僵尸两个概念都是精心挑选的，而不是只是看起来有趣的一个组合</p>
+<p>You don’t have to teach players things they already know</p>
+<h2 id="Lesson-5"><a href="#Lesson-5" class="headerlink" title="Lesson 5"></a>Lesson 5</h2><p>Don’t confuse “interesting” with “fun”</p>
+<p>intellectual stimulation and emotional stimulation</p>
+<p>实例：某基于墓地中数量而起变化的卡牌，配合它的卡是大量的弃牌，然而玩家更倾向于把手中的牌用掉来触发堆墓效果而不是把手中的牌弃掉（除非被弃掉的牌本身在弃牌时能触发额外效果），it’s not fun</p>
+<h2 id="Lesson-6"><a href="#Lesson-6" class="headerlink" title="Lesson 6"></a>Lesson 6</h2><p>Understand what emotion your game is trying to evoke</p>
+<p>清楚你的游戏所要唤起的情感，不适宜的就剪掉</p>
+<p>“No scene is worth a movie,no line is worth a scene”</p>
+<h2 id="Lesson-7"><a href="#Lesson-7" class="headerlink" title="Lesson 7"></a>Lesson 7</h2><p>Allow the player the ability to make the game personal</p>
+<p>允许玩家使游戏个性化</p>
+<p>实例：有关于“地牌”的若干异画</p>
+<p>The more the player feels the game is about them,the better their brain will think of it</p>
+<p>Provide a lot of choices</p>
+<h2 id="Lesson-8"><a href="#Lesson-8" class="headerlink" title="Lesson 8"></a>Lesson 8</h2><p>The details are where the players fall in love with your game</p>
+<p>玩家很有可能会因为一些游戏里不重要的细节而突然对游戏产生极大的好感 </p>
+<h2 id="Lesson-9"><a href="#Lesson-9" class="headerlink" title="Lesson 9"></a>Lesson 9</h2><p>Allow your players to have a secse of ownership</p>
+<p>将更多的自主权给到玩家（不同玩法，独特的个性化等），让玩家对游戏拥有主导权和代入感</p>
+<p>实例：玩家自行设计的“指挥官”赛制模式</p>
+<h2 id="Lesson-10"><a href="#Lesson-10" class="headerlink" title="Lesson 10"></a>Lesson 10</h2><p>Leave room for the player to explore</p>
+<p>留给玩家自行探索的空间，自己发掘出来的东西可能会更加关注</p>
+<h2 id="Lesson-11"><a href="#Lesson-11" class="headerlink" title="Lesson 11"></a>Lesson 11</h2><p>If everyone likes your game,but no one loves it,it will fail</p>
+<p>不要担心玩家会讨厌什么，而要担心他们不对你产生兴趣</p>
+<h2 id="Lesson-12"><a href="#Lesson-12" class="headerlink" title="Lesson 12"></a>Lesson 12</h2><p>Don’t design to prove you can do something</p>
+<p>不要为了去证明什么而做事，你个人的想法很多时候不适合放进游戏</p>
+<h2 id="Lesson-13"><a href="#Lesson-13" class="headerlink" title="Lesson 13"></a>Lesson 13</h2><p>Make the fun part also the correct strategy to win</p>
+<p>让有趣的东西变成致胜关键，引导玩家获取乐趣</p>
+<p>玩家通常默认如果他们做了游戏让他们做的事情就能体会到乐趣；游戏结束时若未能兑现承诺就引发抱怨</p>
+<p>确保游戏胜利途径也是享受游戏乐趣的途径</p>
+<h2 id="Lesson-14"><a href="#Lesson-14" class="headerlink" title="Lesson 14"></a>Lesson 14</h2><p>Don’t be afraid to be blunt</p>
+<p>不用担心用简单粗暴的手段，更直白一些，你甚至可以命令玩家去做事</p>
+<h2 id="Lesson-15"><a href="#Lesson-15" class="headerlink" title="Lesson 15"></a>Lesson 15</h2><p>Design the component for the audience it’s intended for</p>
+<p>清楚你的设计会吸引哪些玩家</p>
+<h2 id="Lesson-16"><a href="#Lesson-16" class="headerlink" title="Lesson 16"></a>Lesson 16</h2><p>Be more afraid of boring your players than challenging them</p>
+<p>不要让你的玩家感到无聊，去用新奇的思路挑战他们</p>
+<h2 id="Lesson-17"><a href="#Lesson-17" class="headerlink" title="Lesson 17"></a>Lesson 17</h2><p>You don’t have to change much to change everything</p>
+<p>做出改变其实不需要你加入太多的东西</p>
+<h2 id="Lesson-18"><a href="#Lesson-18" class="headerlink" title="Lesson 18"></a>Lesson 18</h2><p>Restrictions breed creativity</p>
+<p>限制反而会产生创造力</p>
+<h2 id="Lesson-19"><a href="#Lesson-19" class="headerlink" title="Lesson 19"></a>Lesson 19</h2><p>Your audience is good at recognizing problems and bad at solving them</p>
+<p>你的观众很擅长找问题，同时又很不擅长解决问题</p>
+<h2 id="Lesson-20"><a href="#Lesson-20" class="headerlink" title="Lesson 20"></a>Lesson 20</h2><p>All of the lessons connect</p>
+<p>以上所有的问题与教训都可以是彼此相互关联的，组织成一个关系网络</p>
+</div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>大白兔奶糖</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://iwhite-rabbit.github.io/2026/06/27/TCG-Design-Guide/" title="TCG卡牌设计">https://iwhite-rabbit.github.io/2026/06/27/TCG-Design-Guide/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2026/03/18/IJA-IJN-Aviation-Weapon-Naming/" rel="next" title="旧日本帝国航空兵装备命名规则"><span class="post-nav-text">旧日本帝国航空兵装备命名规则</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2026 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> 大白兔奶糖</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.2.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="live-time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2024-05-28T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = ` ${passDay} 天 ${passHour} 小时 ${passMinute} 分 ${passSecond} 秒`;
+}
+blog_live_time();
+</script></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></body></html>
